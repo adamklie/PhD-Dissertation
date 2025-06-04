@@ -1,0 +1,130 @@
+\chapter{Universal software for machine learning in regulatory genomics}
+\label{chap:Universal software for machine learning in regulatory genomics}
+
+Deep learning has become a popular tool to study cis-regulatory function. Yet efforts to design software for deep-learning analyses in regulatory genomics that are findable, accessible, interoperable and reusable (FAIR) have fallen short of fully meeting these criteria. Here we present elucidating the utility of genomic elements with neural nets (EUGENe), a FAIR toolkit for the analysis of genomic sequences with deep learning. EUGENe consists of a set of modules and subpackages for executing the key functionality of a genomics deep learning workflow: (1) extracting, transforming and loading sequence data from many common file formats; (2) instantiating, initializing and training diverse model architectures; and (3) evaluating and interpreting model behavior. We designed EUGENe as a simple, flexible and extensible interface for streamlining and customizing end-to-end deep-learning sequence analyses, and illustrate these principles through application of the toolkit to three predictive modeling tasks. We hope that EUGENe represents a springboard towards a collaborative ecosystem for deep-learning applications in genomics research.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Cracking the cis-regulatory code that governs gene expression remains a fundamental challenge in genomics research. Efforts to annotate the genome with functional genomics data1 have powered machine learning methods that aim to learn biologically relevant sequence features by directly predicting these readouts. Deep learning has become especially popular in this space, and has been successfully applied to tasks such as DNA and RNA protein binding motif detection2,3,4,5,6, chromatin state prediction7,8,9,10,11,12,13,14,15,16,17,18, transcriptional activity prediction10,19,20,21,22 and 3D contact prediction23,24,25,26. Complementary models have recently been developed to predict data from massively parallel reporter assays that directly test the gene regulatory potential of selected sequences27,28,29. Most encouragingly, many of these multilayered models go beyond state of the art predictive performance to generate expressive representations of the underlying sequence that can be interpreted to better understand the cis-regulatory code16,27,30.
+
+Despite these advances, executing a deep-learning workflow in genomics remains a considerable challenge. Although model training has been substantially simplified by dedicated deep-learning libraries such as PyTorch31 and Tensorflow32, nuances specific to genomics data create an especially high learning curve for performing analyses in this space. On top of this, the heterogeneity in implementations of most code associated with publications greatly hinders extensibility and reproducibility. These conditions often make the development of genomics deep-learning workflows painfully slow even for experienced deep-learning researchers, and potentially inaccessible to many others.
+
+Accordingly, the genomics deep-learning community has assembled software packages33,34,35,36,37 that aim to address one or more of these challenges. However, each toolkit on its own does not offer both end-to-end functionality and simplicity, and there remains a general lack of interoperability between packages. For instance, Kipoi36 increases the accessibility of trained models and published architectures, but does not provide a comprehensive framework for an end-to-end deep-learning workflow. Selene34 implements a library based in PyTorch for applying the full deep-learning workflow to new or existing models, but offers a limited programmatic interface, requires the use of complex configuration files, and has limited functionality for model interpretation. Janggu35, one of the more comprehensive packages, provides extensive functionality for data loading and for training models, but offers limited support for PyTorch and limited functionality for model interpretation.
+
+There is generally a need for an end-to-end toolkit in this space that follows findable, accessible, interoperable and reusable (FAIR) data and software principles38, and that is inherently designed to be simple and extensible. To address this need, we have developed elucidating the utility of genomic elements with neural nets (EUGENe), a FAIR toolkit for the analysis of sequence-based datasets.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The EUGENe workflow}
+
+A standard EUGENe workflow consists of three main stages outlined in Fig. 1: extracting, transforming and loading (ETL) data from common file formats (Fig. 1a); instantiating, initializing and training (IIT) neural network architectures (Fig. 1b); and evaluating and interpreting (EI) learned model behavior on held-out data (Fig. 1c). The major goal of EUGENe is to streamline the end-to-end execution of these three stages to promote the effective design, implementation, validation and interpretation of deep-learning solutions in regulatory genomics. We have listed several common deep learning for regulatory genomics tasks that can be implemented in an end-to-end fashion with EUGENe (Supplementary Table 1). We next describe three in detail, highlighting the core aspects of the workflow on different data types and training tasks. A more detailed description of the workflow is provided in the Methods.
+
+\subsection{STARR-seq plant promoter activity prediction}
+
+We first used EUGENe to analyze published data from an assay of plant promoters29 (Fig. 2a). Jores et al. selected promoter sequences from −165 to +5-bp relative to the annotated transcription start site for protein-coding and microRNA genes of Arabidopsis thaliana, Zea mays (maize) and Sorghum bicolor29. A total of 79,838 170-bp promoters were used to transiently transform two separate plant systems, tobacco leaves and maize protoplasts. Regulatory activity was quantified using a variant of the self-transcribing active regulatory region sequencing (STARR-seq) assay39 in each system. The resulting data provides two activity scores that can serve as single task regression targets for training EUGENe models.
+
+We next applied several of EUGENe’s interpretation functions to the trained models to determine the sequence features each used to predict plant promoter activity. First, we used a filter visualization approach11 to generate position frequency matrix (PFM) representations for each of the first convolutional layer’s filters and used the TomTom41 tool to annotate them. We queried the PFMs against the 78 motifs used to initialize the convolutional layers, both to determine whether the initialized filters retained their motifs and to see whether randomly initialized filters learned them de novo. For the leaf and protoplast models, many of the learned filters were annotated to the TATA box binding motif and other core promoter elements (Fig. 2c,d). Only ten learned filters from the combined model were assigned a significant annotation (adjusted P-value < 0.05) by TomTom (Fig. 2d and Supplementary Fig. 1c), consistent with the observed performance drop in this system (Supplementary Fig. 1a). We next applied the DeepLIFT method42 to determine the individual nucleotide contributions for each test set sequence prediction. For many of the sequences with the highest observed activity scores, the TATA box motifs were often the lone salient feature identified (Fig. 2e and Supplementary Fig. 1d). In fact, when only a TATA box motif was inserted into every possible position in each of the 310 selected promoters, we observed an 147\% average increase in predicted activity across insertion positions and sequence contexts for the leaf model (Fig. 2f and Supplementary Fig. 1e). Finally, we performed ten rounds of in silico evolution on the same set of 310 promoters as described in Jores et al. Almost all of the starting promoters showed a notable increase in predicted activity after just three mutations (Fig. 2g and Supplementary Fig. 1f). These results showcase a representative example of the way EUGENe’s interpretation suite can be used to identify the key features that a model uses to make predictions.
+
+\subsection{In vitro RNA binding prediction with DeepBind}
+
+To illustrate EUGENe’s versatility for different inputs and prediction tasks, we next applied it to analyze RNA binding protein (RBP) specificity data previously introduced by Ray et al.43 and analyzed through deep learning by Alipanahi and colleagues2. In the latter work, they trained 244 CNN models (DeepBind models) that each predicted the binding patterns of a single RBP on a set of 241,357 RNA probes (Extended Data Fig. 1a). The full probe set was designed to capture all possible RNA 9-mers at least 16 times and was split into two balanced subsets (sets A and B) for training and validation, respectively (see Methods)43. Each RBP was incubated with a molecular excess of probes from each subset (in separate experiments) and subsequently recovered by affinity purification. The RNAs associated with each RBP were then quantified by microarray and subsequent bioinformatic analysis44. This yielded a vector of continuous binding intensity values for each RBP across the probe set that can be used for prediction.
+
+To prepare for training, we first implemented a flexible DeepBind architecture in EUGENe (see Methods) and then trained 244 single task models by using a nearly identical training procedure to Alipanahi et al.2 (Supplementary Data 2). Along with these single task models, we also randomly initialized and trained a multitask model (Supplementary Data 2) to predict 233 RBP specificities (that is, a 233-dimensional vector) in a single forward pass, excluding 11 RBPs due to a high proportion of missing values across probes in the training set. We also loaded 89 existing Kipoi36 models trained on a subset of human RBPs in the dataset.
+
+Performance on Set B for all deep-learning models was on par with Set B’s correlation to Set A (Extended Data Fig. 1b and Supplementary Fig. 2a) and both single task and multitask models trained with EUGENe showed comparable performance to Kipoi and DeepBind models (Extended Data Fig. 1b,c and Supplementary Fig. 2a,b). The reason for the poor observed performance of certain Kipoi models is not immediately clear, but could relate to differences in sequence or target preprocessing before evaluation. Although the ability to load these pretrained models from Kipoi is very useful for benchmarking, implementing and retraining models is often necessary for fair performance comparisons. EUGENe supports both loading and retraining models, allowing users to more quickly design and execute quality benchmarking experiments.
+
+We next applied EUGENe’s interpretation suite to our trained models, first using the filter visualization approach outlined by Alipanahi et al.2 to generate PFMs for convolutional filters. We again used TomTom to identify filters annotated with canonical RBP motifs43 in both the best-performing single-task models and the multitask model (Extended Data Fig. 1d and Supplementary Fig. 2c), and found that the number of multitask filters annotated to an RBP was correlated with predictive performance for that RBP (Extended Data Fig. 1d, bottom). We also calculated attributions for all Set B sequences using the InputXGradient method42 and observed that canonical motifs were learned by both single- and multitask models (Extended Data Fig. 1e and Supplementary Fig. 2d). Finally, we used EUGENe’s sequence evolution functionality to evolve ten random sequences using the single task HNRNPA1L2 model and visualized the attributions for these sequences before and after five rounds of evolution (Extended Data Fig. 1f). Several of the mutations that most increased the predicted score were those that generated canonical binding motifs for the protein. We repeated this for two other RBPs (Pcbp2 and NCU02404) and observed that each model prioritizes mutations that create canonical binding motifs specific to the RBP they were trained on (Supplementary Fig. 2e). These results show that EUGENe simplifies the extraction of salient features from models trained within the same workflow.
+
+\subsection{JunD ChIP-seq binding classification}
+
+As our final use case, we applied EUGENe to the classification of JunD binding as described by Kopp and colleagues35. This task uses ChIP-seq data from ENCODE1 to generate input sequences and binarized classification labels for each sequence (Extended Data Fig. 2a). We used EUGENe to first build a deep-learning-ready dataset for this prediction task (see Methods) and then implemented the CNN architecture described by Kopp et al. (Kopp21CNN). We benchmarked classification performance against built-in fully connected networks (FCNs), CNNs and Hybrid models with matched hyperparameters (Supplementary Data 3). All built-in models were configured to incorporate information from both the forward and reverse strand (double-stranded or ‘ds’ models).
+
+We trained models using the same procedure described by Kopp et al. (see Methods)35. Due to the unbalanced nature of the dataset, we focused on evaluating models with the area under the precision recall curve (AUPRC). For our Kopp21CNNs, we were able to achieve comparable performances on held-out chromosome 3 sequences to those reported by Kopp et al. for one-hot encoded sequences (Extended Data Fig. 2b,c). The dsFCN—the only model without any convolutional layers—immediately overfit the data after a single training epoch and was not predictive of binding (Extended Data Fig. 2c). The dsCNN models, however, achieved higher mean AUPRCs than the dsHybrid models, and much higher AUPRCs than the Kopp21CNN architectures.
+
+We next applied EUGENe’s interpretation tools to ask whether our best models were learning sequence features relevant to JunD binding to make predictions. We first generated attributions for the forward and reverse complement strands of all test set sequences using the GradientSHAP45 method, and visualized the most highly predicted sequences as sequence logos (Extended Data Fig. 2d and Supplementary Fig. 3a). We observed that the most important nucleotides often highlighted consensus or near-consensus JunD motifs, and that these motifs were often attributed similarly on both the forward and reverse strands (Extended Data Fig. 2d and Supplementary Fig. 3a); however, there were instances in which salient motifs were highlighted on one strand but not the other (Extended Data Fig. 2d), indicating the utility of incorporating information from both strands for prediction. We next generated PFM representations for all ten filters of each convolutional model (excluding dsFCNs) and annotated them using TomTom against the HOCOMOCO FULL v.11 database46 (Extended Data Fig. 2e and Supplementary Fig. 3b). Among the top hits, we found several filters annotated with motifs such as JunD and CTCF (Extended Data Fig. 2e and Supplementary Fig. 3b). Finally, we performed an in silico experiment with the best overall model, in which we slid a consensus JunD motif across each position of a set of ten randomly generated sequences and predicted binding (Extended Data Fig. 2f). We observed that the simple inclusion of the consensus binding site led to a considerable jump in predicted output with some position specificity. These results once again showcase that EUGENe’s interpretation methods can help explain model predictions, in this case for DNA protein binding from a genome-wide assay.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+There are numerous opportunities for future development of EUGENe, but we see a few as high priority. EUGENe is primarily designed to work on nucleotide sequence input (DNA and RNA), but currently does not have dedicated functions for handling protein sequence or multimodal inputs. Furthermore, as assays move from bulk to single-cell resolution, it will be important to develop functionality for handling single-cell data that allows users to easily ask questions about cell-type-specific regulatory syntax. Finally, we plan on expanding EUGENe’s dataset and model library to encompass a larger portion of those available in the field.
+
+The heterogeneity in data types and methods that exist in deep learning for regulatory genomics and the rapid pace with which the field advances makes maintaining FAIR software in this space a major challenge. One of the tasks in Supplementary Table 1, for instance, involves a recently developed and highly specific data formatting and preprocessing pipeline47. The use of bespoke methods for data preprocessing, as well as for model interpretation, is quite common in the field, and is often necessary to train accurate models that avoid common machine learning pitfalls48. For example, some workflows may require complex implementations of train and test set splitting to protect against information leakage49. We see substantial value in continuing to extend EUGENe into spaces such as these, and have designed the toolkit to allow for easy integration of this type of functionality. To continue to make bespoke methods and workflows accessible, we intend to encourage community development of EUGENe through tutorials, workshops and a dedicated user group.
+
+As large consortia (such as ENCODE Phase 4 and Impact of Genomic Variation on Function) and individual groups continue to generate functional genomics data at both the bulk and single-cell level, the need for a standardized deep-learning analysis ecosystem to investigate complex relationships in this data becomes even more pressing. We believe that EUGENe represents a positive step in the direction of such an ecosystem and will empower computational scientists to rapidly expand their knowledge, develop and share methods and models, and answer important questions about the genome and how it encodes function.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Methods}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The EUGENe workflow}
+
+\subsubsection{Data extraction, transformation and loading with SeqData}
+
+\subsubsection{Model training with PyTorch and PyTorch Lightning}
+
+\subsubsection{Model interpretation with SeqExplainer}
+
+\subsection{Analysis of plant promoter data}
+
+\subsubsection{Data acquisition and preprocessing}
+
+Plant promoter assay data were obtained from the GitHub repository associated with the work by Jores and co-workers29. These included two identical libraries for a set of 79,838 plant promoters synthesized with an upstream viral 35 S enhancer and downstream barcode tagged GFP reporter gene (Fig. 2a). The libraries were designed to include 10–20 constructs with distinct barcodes for each promoter. These libraries were used to transiently transform both tobacco leaves and maize protoplasts and promoter activities were assayed using plant STARR-seq39. Per-barcode activity was calculated as the ratio of RNA barcode frequency to DNA barcode frequency and the median of these ratios was then used to aggregate across barcodes assigned to the same promoter. These aggregated scores were then normalized by the median value for a control construct and were log transformed to calculate a per-promoter ‘enrichment’ score. We downloaded these enrichment scores83 for both libraries as separate datasets which we could use as training targets. We used the identical 90/10 training and test split used in Jores et al. (the dataset could be downloaded with set labels). The training set was further split into 90/10 train and validation sets. All sequences were one-hot encoded using a channel for each letter of the DNA alphabet (‘ACGT’).
+
+\subsubsection{Model initialization and training}
+
+We implemented the Jores21CNN architecture by translating the Keras code in the associated GitHub repository into PyTorch and integrating it into our library. We benchmarked this architecture against built-in CNN, Hybrid and DeepSTARR architectures in EUGENe with the hyperparameters described in Supplementary Data 1. In each convolutional layer, the Jores21CNN first applies a set of filters to the input as is standard for convolutional models, but also applies the reverse complements of the filters (as opposed to the reverse complement of the sequences) to each input in an effort to capture information from both strands40. As this still only requires a single strand as input into the models, we opted to benchmark against only single-stranded versions of built-in CNN and Hybrid models. Following instantiation, we initialized 78 filters in the first convolutional layer of each model using PWMs derived from core promoter elements and transcription factor binding clusters downloaded from the GitHub repository84 associated with the publication. All of the other parameters were initialized by sampling from the Kaiming normal distribution85. We trained models for a maximum of 25 epochs with a batch size of 128 and used the Adam optimizer with an initial learning rate of 0.001. We also included a learning rate scheduler that modified the learning rate during training with a patience of two epochs. We used mean squared error as our objective function and stopped training early if the validation set error did not decrease after five epochs.
+
+\subsubsection{Model evaluation and interpretation}
+
+Models were primarily evaluated using the percentage of variance explained (R2) on predictions for the test set. We repeated the above training procedure across five independent random initializations and evaluated R2 scores across these trials. For PWM visualization, we used the approach described by Minnoye and colleagues11. Briefly, for each filter in the first convolutional layer, we calculated activations for all subsequences (of the same length as the filter) within the test set sequences. We then took the top-100 subsequences corresponding to the top-100 activations (maximally activating subsequences) and generated a PFM. For visualizing filters as sequence logos, we converted PFMs to PWMs using a uniform background nucleotide frequency. We calculated attributions for all test set sequences using the DeepLIFT method42. To perform the feature implantation approach, we downloaded the 16 bp PFM containing the consensus TATA box motif from the Jores et al. GitHub repository and one-hot encoded it by taking the highest probability nucleotide at each position. We also downloaded the set of 310 promoters86 used by Jores et al. for in silico evolution. We then implanted the TATA box containing sequence at every possible position of each of the 310 promoter sequences and used selected high-performing models (one each from leaf, protoplast and combined) to make predictions. We compared this to predicted scores generated with the same feature implantation approach using a shuffled version of the 16 bp sequence containing the TATA box motif, a random 16 bp one-hot encoded sequence, and a 16 bp all zeros input. We performed the in silico evolution experiments on the same set of 310 promoter sequences29. In each round, we first used in silico saturation mutagenesis to identify the mutation that increased the model score by the largest positive value (delta score). We then introduced this mutation into the sequence and repeated this for ten iterations.
+
+\subsection{Analysis of RNA binding data}
+
+\subsubsection{Data acquisition and preprocessing}
+
+\subsubsection{Model initialization and training}
+
+\subsubsection{Model evaluation}
+
+\subsubsection{Model interpretation}
+
+\subsection{Analysis of JunD binding data}
+
+\subsubsection{Data acquisition and preprocessing}
+
+\subsubsection{Model initialization and training}
+
+\subsubsection{Model evaluation and interpretation}
+
+\subsection{Data visualization software}
+
+\subsection{Statistical methods}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Data availability}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Code availability}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Acknowledgements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This work was supported by the National Institutes of Health (grant no. 1U01HG012059); infrastructure was funded by the National Institutes of Health (grant no. 2P41GM103504-11); T.J. is supported by the German Research Foundation (DFG; fellowship no. 441540116). E.K.F and J.J.S were supported by the National Institutes of Health (grant no. DP2HG010013). H.C. is supported by the Canadian Institute for Advanced Research (award no. FL-000655). We would like to thank the community of genomics researchers who made their code open source so that we could utilize it for EUGENe functions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Author information}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ethics declarations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Competing interests}
