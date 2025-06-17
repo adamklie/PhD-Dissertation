@@ -1,0 +1,1666 @@
+@ARTICLE{Avsec2021-sw,
+  title    = "Base-resolution models of transcription-factor binding reveal soft
+              motif syntax",
+  author   = "Avsec, Žiga and Weilert, Melanie and Shrikumar, Avanti and
+              Krueger, Sabrina and Alexandari, Amr and Dalal, Khyati and Fropf,
+              Robin and McAnany, Charles and Gagneur, Julien and Kundaje, Anshul
+              and Zeitlinger, Julia",
+  journal  = "Nat. Genet.",
+  volume   =  53,
+  number   =  3,
+  pages    = "354--366",
+  abstract = "The arrangement (syntax) of transcription factor (TF) binding
+              motifs is an important part of the cis-regulatory code, yet
+              remains elusive. We introduce a deep learning model, BPNet, that
+              uses DNA sequence to predict base-resolution chromatin
+              immunoprecipitation (ChIP)-nexus binding profiles of pluripotency
+              TFs. We develop interpretation tools to learn predictive motif
+              representations and identify soft syntax rules for cooperative TF
+              binding interactions. Strikingly, Nanog preferentially binds with
+              helical periodicity, and TFs often cooperate in a directional
+              manner, which we validate using clustered regularly interspaced
+              short palindromic repeat (CRISPR)-induced point mutations. Our
+              model represents a powerful general approach to uncover the motifs
+              and syntax of cis-regulatory sequences in genomics data.",
+  month    =  mar,
+  year     =  2021,
+  language = "en"
+}
+,@ARTICLE{Jindal2022-qf,
+  title    = "Affinity-optimizing variants within cardiac enhancers disrupt
+              heart development and contribute to cardiac traits",
+  author   = "Jindal, Granton A and Bantle, Alexis T and Solvason, Joe J and
+              Grudzien, Jessica L and D'Antonio-Chronowska, Agnieszka and Lim,
+              Fabian and Le, Sophia H and Larsen, Reid O and Klie, Adam and
+              Frazer, Kelly A and Farley, Emma K",
+  journal  = "bioRxiv",
+  pages    = "2022.05.27.493636",
+  abstract = "Summary Enhancers direct precise gene expression patterns during
+              development and harbor the majority of variants associated with
+              disease. We find that suboptimal affinity ETS transcription factor
+              binding sites are prevalent within Ciona and human developmental
+              heart enhancers. Here we demonstrate in two diverse systems, Ciona
+              intestinalis and human iPSC-derived cardiomyocytes (iPSC-CMs),
+              that single nucleotide changes can optimize the affinity of ETS
+              binding sites, leading to gain-of-function gene expression
+              associated with heart phenotypes. In Ciona, ETS
+              affinity-optimizing SNVs lead to ectopic expression and phenotypic
+              changes including two beating hearts. In human iPSC-CMs, an
+              affinity-optimizing SNV associated with QRS duration occurs within
+              an SCN5A enhancer and leads to increased enhancer activity. Our
+              mechanistic approach provides a much-needed systematic framework
+              that works across different enhancers, cell types and species to
+              pinpoint causal enhancer variants contributing to
+              enhanceropathies, phenotypic diversity and evolutionary changes.In
+              Brief The prevalent use of low-affinity ETS sites within
+              developmental heart enhancers creates vulnerability within genomes
+              whereby single nucleotide changes can dramatically increase
+              binding affinity, causing gain-of-function enhancer activity that
+              impacts heart development.Highlights ETS affinity-optimizing SNVs
+              can lead to migration defects and a multi-chambered heart.An ETS
+              affinity-optimizing human SNV within an SCN5A enhancer increases
+              expression and is associated with QRS duration.Searching for ETS
+              affinity-optimizing variants is a systematic and generalizable
+              approach to pinpoint causal enhancer variants.",
+  month    =  may,
+  year     =  2022,
+  language = "en"
+}
+,@ARTICLE{noauthor_undated-wu,
+  title    = "{regLM}: Designing realistic regulatory {DNA} with autoregressive
+              language models",
+  author   = "Lal, Avantika and Biancalani, Tommaso and Eraslan, Gökcen",
+  abstract = "Designing cis-regulatory DNA elements (CREs) with desired
+              properties is a challenging task with many therapeutic
+              applications. Here, we used autoregressive language models trained
+              on yeast and human putative CREs, in conjunction with supervised
+              sequence-to-function models, to design regulatory DNA with desired
+              patterns of activity. Our framework, regLM, compares favorably to
+              existing CRE design approaches at generating realistic and diverse
+              regulatory DNA, while also providing insights into the
+              cis-regulatory code.",
+  month    =  oct,
+  year     =  2023
+}
+,@ARTICLE{De_Boer2024-ic,
+  title    = "Hold out the genome: a roadmap to solving the cis-regulatory code",
+  author   = "de Boer, Carl G and Taipale, Jussi",
+  journal  = "Nature",
+  volume   =  625,
+  number   =  7993,
+  pages    = "41--50",
+  abstract = "Gene expression is regulated by transcription factors that work
+              together to read cis-regulatory DNA sequences. The 'cis-regulatory
+              code' - how cells interpret DNA sequences to determine when, where
+              and how much genes should be expressed - has proven to be
+              exceedingly complex. Recently, advances in the scale and
+              resolution of functional genomics assays and machine learning have
+              enabled substantial progress towards deciphering this code.
+              However, the cis-regulatory code will probably never be solved if
+              models are trained only on genomic sequences; regions of homology
+              can easily lead to overestimation of predictive performance, and
+              our genome is too short and has insufficient sequence diversity to
+              learn all relevant parameters. Fortunately, randomly synthesized
+              DNA sequences enable testing a far larger sequence space than
+              exists in our genomes, and designed DNA sequences enable targeted
+              queries to maximally improve the models. As the same biochemical
+              principles are used to interpret DNA regardless of its source,
+              models trained on these synthetic data can predict genomic
+              activity, often better than genome-trained models. Here we provide
+              an outlook on the field, and propose a roadmap towards solving the
+              cis-regulatory code by a combination of machine learning and
+              massively parallel assays using synthetic DNA.",
+  month    =  jan,
+  year     =  2024,
+  language = "en"
+}
+,@ARTICLE{Rafi2025-er,
+  title    = "Detecting and avoiding homology-based data leakage in
+              genome-trained sequence models",
+  author   = "Rafi, Abdul Muntakim and Kiyota, Brett and Yachie, Nozomu and de
+              Boer, Carl",
+  journal  = "bioRxiv",
+  pages    = "2025.01.22.634321",
+  abstract = "AbstractModels that predict function from DNA sequence have become
+              critical tools in deciphering the roles of genomic sequences and
+              genetic variation within them. However, traditional approaches for
+              dividing the genomic sequences into training data, used to create
+              the model, and test data, used to determine the model’s
+              performance on unseen data, fail to account for the widespread
+              homology that permeates the genome. Using models that predict
+              human gene expression from DNA sequence, we demonstrate that model
+              performance on test sequences varies by their similarity with
+              training sequences, consistent with homology-based ‘data leakage’
+              that influences model performance by rewarding overfitting of
+              homologous sequences. Because the sequence and its function are
+              inexorably linked, even a maximally overfit model with no
+              understanding of gene regulation can predict the expression of
+              sequences that are similar to its training data. To prevent
+              leakage in genome-trained models, we introduce ‘hashFrag,’ a
+              scalable solution for partitioning data with minimal leakage.
+              hashFrag improves estimates of model performance and can actually
+              increase model performance by providing improved splits for model
+              training. Altogether, we demonstrate how to account for
+              homology-based leakage when partitioning genomic sequences for
+              model training and evaluation, and highlight the consequences of
+              failing to do so.",
+  month    =  jan,
+  year     =  2025,
+  language = "en"
+}
+,@ARTICLE{Klie2023-yr,
+  title     = "Predictive analyses of regulatory sequences with {EUGENe}",
+  author    = "Klie, Adam and Laub, David and Talwar, James V and Stites, Hayden
+               and Jores, Tobias and Solvason, Joe J and Farley, Emma K and
+               Carter, Hannah",
+  journal   = "Nature Computational Science",
+  publisher = "Nature Publishing Group US",
+  volume    =  3,
+  number    =  11,
+  pages     = "946--956",
+  abstract  = "Deep learning has become a popular tool to study cis-regulatory
+               function. Yet efforts to design software for deep-learning
+               analyses in regulatory genomics that are findable, accessible,
+               interoperable and reusable (FAIR) have fallen short of fully
+               meeting these criteria. Here we present elucidating the utility
+               of genomic elements with neural nets (EUGENe), a FAIR toolkit for
+               the analysis of genomic sequences with deep learning. EUGENe
+               consists of a set of modules and subpackages for executing the
+               key functionality of a genomics deep learning workflow: (1)
+               extracting, transforming and loading sequence data from many
+               common file formats; (2) instantiating, initializing and training
+               diverse model architectures; and (3) evaluating and interpreting
+               model behavior. We designed EUGENe as a simple, flexible and
+               extensible interface for streamlining and customizing end-to-end
+               deep-learning sequence analyses, and illustrate these principles
+               through application of the toolkit to three predictive modeling
+               tasks. We hope that EUGENe represents a springboard towards a
+               collaborative ecosystem for deep-learning applications in
+               genomics research. Designing accessible, interoperable and
+               reusable software for applying deep learning to the study of gene
+               regulation has been a challenge in genomics research. EUGENe is a
+               toolkit that addresses this gap and streamlines end-to-end
+               analyses.",
+  month     =  nov,
+  year      =  2023,
+  language  = "en"
+}
+,@ARTICLE{Stormo2000-ei,
+  title     = "{DNA} binding sites: representation and discovery",
+  author    = "Stormo, G D",
+  journal   = "Bioinformatics",
+  publisher = "Oxford University Press (OUP)",
+  volume    =  16,
+  number    =  1,
+  pages     = "16--23",
+  abstract  = "The purpose of this article is to provide a brief history of the
+               development and application of computer algorithms for the
+               analysis and prediction of DNA binding sites. This problem can be
+               conveniently divided into two subproblems. The first is, given a
+               collection of known binding sites, develop a representation of
+               those sites that can be used to search new sequences and reliably
+               predict where additional binding sites occur. The second is,
+               given a set of sequences known to contain binding sites for a
+               common factor, but not knowing where the sites are, discover the
+               location of the sites in each sequence and a representation for
+               the specificity of the protein.",
+  month     =  jan,
+  year      =  2000,
+  language  = "en"
+}
+,@ARTICLE{Kingma2014-kn,
+  title         = "Adam: A Method for Stochastic Optimization",
+  author        = "Kingma, Diederik P and Ba, Jimmy",
+  journal       = "arXiv [cs.LG]",
+  abstract      = "We introduce Adam, an algorithm for first-order
+                   gradient-based optimization of stochastic objective
+                   functions, based on adaptive estimates of lower-order
+                   moments. The method is straightforward to implement, is
+                   computationally efficient, has little memory requirements, is
+                   invariant to diagonal rescaling of the gradients, and is well
+                   suited for problems that are large in terms of data and/or
+                   parameters. The method is also appropriate for non-stationary
+                   objectives and problems with very noisy and/or sparse
+                   gradients. The hyper-parameters have intuitive
+                   interpretations and typically require little tuning. Some
+                   connections to related algorithms, on which Adam was
+                   inspired, are discussed. We also analyze the theoretical
+                   convergence properties of the algorithm and provide a regret
+                   bound on the convergence rate that is comparable to the best
+                   known results under the online convex optimization framework.
+                   Empirical results demonstrate that Adam works well in
+                   practice and compares favorably to other stochastic
+                   optimization methods. Finally, we discuss AdaMax, a variant
+                   of Adam based on the infinity norm.",
+  month         =  dec,
+  year          =  2014,
+  archivePrefix = "arXiv",
+  primaryClass  = "cs.LG"
+}
+,@ARTICLE{Lim2024-ph,
+  title     = "Affinity-optimizing enhancer variants disrupt development",
+  author    = "Lim, Fabian and Solvason, Joe J and Ryan, Genevieve E and Le,
+               Sophia H and Jindal, Granton A and Steffen, Paige and Jandu,
+               Simran K and Farley, E",
+  journal   = "Nature",
+  publisher = "Nature Publishing Group UK",
+  volume    =  626,
+  number    =  7997,
+  pages     = "151--159",
+  month     =  jan,
+  year      =  2024
+}
+,@ARTICLE{Farley2016-eh,
+  title    = "Syntax compensates for poor binding sites to encode tissue
+              specificity of developmental enhancers",
+  author   = "Farley, Emma K and Olson, Katrina M and Zhang, Wei and Rokhsar,
+              Daniel S and Levine, Michael S",
+  journal  = "Proc. Natl. Acad. Sci. U. S. A.",
+  volume   =  113,
+  number   =  23,
+  pages    = "6508--6513",
+  abstract = "Transcriptional enhancers are short segments of DNA that switch
+              genes on and off in response to a variety of intrinsic and
+              extrinsic signals. Despite the discovery of the first enhancer
+              more than 30 y ago, the relationship between primary DNA sequence
+              and enhancer activity remains obscure. In particular, the
+              importance of ``syntax'' (the order, orientation, and spacing of
+              binding sites) is unclear. A high-throughput screen identified
+              synthetic notochord enhancers that are activated by the
+              combination of ZicL and ETS transcription factors in Ciona
+              embryos. Manipulation of these enhancers elucidated a ``regulatory
+              code'' of sequence and syntax features for notochord-specific
+              expression. This code enabled in silico discovery of bona fide
+              notochord enhancers, including those containing low-affinity
+              binding sites that would be excluded by standard motif
+              identification methods. One of the newly identified enhancers maps
+              upstream of the known enhancer that regulates Brachyury (Ci-Bra),
+              a key determinant of notochord specification. This newly
+              identified Ci-Bra shadow enhancer contains binding sites with very
+              low affinity, but optimal syntax, and therefore mediates
+              surprisingly strong expression in the notochord. Weak binding
+              sites are compensated by optimal syntax, whereas enhancers
+              containing high-affinity binding affinities possess suboptimal
+              syntax. We suggest this balance has obscured the importance of
+              regulatory syntax, as noncanonical binding motifs are typically
+              disregarded by enhancer detection methods. As a result, enhancers
+              with low binding affinities but optimal syntax may be a vastly
+              underappreciated feature of the regulatory genome.",
+  month    =  jun,
+  year     =  2016,
+  keywords = "enhancer; enhancer grammar; gene regulation; regulatory
+              principles; transcription",
+  language = "en"
+}
+,@ARTICLE{Castro-Mondragon2022-kx,
+  title    = "{JASPAR} 2022: the {9th} release of the open-access database of
+              transcription factor binding profiles",
+  author   = "Castro-Mondragon, Jaime A and Riudavets-Puig, Rafael and
+              Rauluseviciute, Ieva and Lemma, Roza Berhanu and Turchi, Laura and
+              Blanc-Mathieu, Romain and Lucas, Jeremy and Boddie, Paul and Khan,
+              Aziz and Manosalva Pérez, Nicolás and Fornes, Oriol and Leung,
+              Tiffany Y and Aguirre, Alejandro and Hammal, Fayrouz and
+              Schmelter, Daniel and Baranasic, Damir and Ballester, Benoit and
+              Sandelin, Albin and Lenhard, Boris and Vandepoele, Klaas and
+              Wasserman, Wyeth W and Parcy, François and Mathelier, Anthony",
+  journal  = "Nucleic Acids Res.",
+  volume   =  50,
+  number   = "D1",
+  pages    = "D165--D173",
+  abstract = "JASPAR (http://jaspar.genereg.net/) is an open-access database
+              containing manually curated, non-redundant transcription factor
+              (TF) binding profiles for TFs across six taxonomic groups. In this
+              9th release, we expanded the CORE collection with 341 new profiles
+              (148 for plants, 101 for vertebrates, 85 for urochordates, and 7
+              for insects), which corresponds to a 19\% expansion over the
+              previous release. We added 298 new profiles to the Unvalidated
+              collection when no orthogonal evidence was found in the
+              literature. All the profiles were clustered to provide familial
+              binding profiles for each taxonomic group. Moreover, we revised
+              the structural classification of DNA binding domains to consider
+              plant-specific TFs. This release introduces word clouds to
+              represent the scientific knowledge associated with each TF. We
+              updated the genome tracks of TFBSs predicted with JASPAR profiles
+              in eight organisms; the human and mouse TFBS predictions can be
+              visualized as native tracks in the UCSC Genome Browser. Finally,
+              we provide a new tool to perform JASPAR TFBS enrichment analysis
+              in user-provided genomic regions. All the data is accessible
+              through the JASPAR website, its associated RESTful API, the
+              R/Bioconductor data package, and a new Python package, pyJASPAR,
+              that facilitates serverless access to the data.",
+  month    =  jan,
+  year     =  2022,
+  language = "en"
+}
+,@ARTICLE{De_Almeida2023-xu,
+  title     = "Targeted design of synthetic enhancers for selected tissues in
+               the Drosophila embryo",
+  author    = "de Almeida, Bernardo P and Schaub, Christoph and Pagani, Michaela
+               and Secchia, Stefano and Furlong, Eileen E M and Stark, Alexander",
+  journal   = "Nature",
+  publisher = "Nature Publishing Group",
+  pages     = "1--2",
+  abstract  = "Enhancers control gene expression and play crucial roles in
+               development and homeostasis1–3. However, the targeted de novo
+               design of enhancers with tissue-specific activities has remained
+               challenging. Here, we combine deep learning and transfer learning
+               to design tissue-specific enhancers for five tissues in the
+               Drosophila melanogaster embryo – the central nervous system
+               (CNS), epidermis, gut, muscle, and brain. We first train
+               convolutional neural networks (CNNs) using genome-wide scATAC-seq
+               datasets and then fine-tune the CNNs with smaller-scale data from
+               in vivo enhancer activity assays, yielding models with 25\% to
+               75\% positive predictive value according to cross-validation. We
+               designed and experimentally assessed 40 synthetic enhancers
+               (eight per tissue) in vivo, of which 31 (78\%) were active and 27
+               (68\%) functioned in the target tissue (100\% for CNS and
+               muscle). The strategy to combine genome-wide and small-scale
+               functional datasets by transfer learning is generally applicable
+               and should enable the design of tissue-, cell type-, and cell
+               state-specific enhancers in any system.",
+  month     =  dec,
+  year      =  2023,
+  language  = "en"
+}
+,@ARTICLE{Jindal2023-fp,
+  title    = "Single-nucleotide variants within heart enhancers increase binding
+              affinity and disrupt heart development",
+  author   = "Jindal, Granton A and Bantle, Alexis T and Solvason, Joe J and
+              Grudzien, Jessica L and D'Antonio-Chronowska, Agnieszka and Lim,
+              Fabian and Le, Sophia H and Song, Benjamin P and Ragsac, Michelle
+              F and Klie, Adam and Larsen, Reid O and Frazer, Kelly A and
+              Farley, Emma K",
+  journal  = "Dev. Cell",
+  volume   =  58,
+  number   =  21,
+  pages    = "2206--2216.e5",
+  abstract = "Transcriptional enhancers direct precise gene expression patterns
+              during development and harbor the majority of variants associated
+              with phenotypic diversity, evolutionary adaptations, and disease.
+              Pinpointing which enhancer variants contribute to changes in gene
+              expression and phenotypes is a major challenge. Here, we find that
+              suboptimal or low-affinity binding sites are necessary for precise
+              gene expression during heart development. Single-nucleotide
+              variants (SNVs) can optimize the affinity of ETS binding sites,
+              causing gain-of-function (GOF) gene expression, cell migration
+              defects, and phenotypes as severe as extra beating hearts in the
+              marine chordate Ciona robusta. In human induced pluripotent stem
+              cell (iPSC)-derived cardiomyocytes, a SNV within a human GATA4
+              enhancer increases ETS binding affinity and causes GOF enhancer
+              activity. The prevalence of suboptimal-affinity sites within
+              enhancers creates a vulnerability whereby affinity-optimizing SNVs
+              can lead to GOF gene expression, changes in cellular identity, and
+              organismal-level phenotypes that could contribute to the evolution
+              of novel traits or diseases.",
+  month    =  nov,
+  year     =  2023,
+  keywords = "GATA4; affinity-optimizing SNVs; causal enhancer variants;
+              enhanceropathies; enhancers; heart development; low affinity;
+              suboptimal affinity; suboptimization",
+  language = "en"
+}
+,@ARTICLE{Zhao2023-ql,
+  title     = "A single-cell massively parallel reporter assay detects
+               cell-type-specific gene regulation",
+  author    = "Zhao, Siqi and Hong, Clarice K Y and Myers, Connie A and Granas,
+               David M and White, Michael A and Corbo, Joseph C and Cohen, Barak
+               A",
+  journal   = "Nature Genetics",
+  publisher = "Nature Publishing Group",
+  volume    =  55,
+  number    =  2,
+  pages     = "346--354",
+  abstract  = "Massively parallel reporter gene assays are key tools in
+               regulatory genomics but cannot be used to identify
+               cell-type-specific regulatory elements without performing assays
+               serially across different cell types. To address this problem, we
+               developed a single-cell massively parallel reporter assay
+               (scMPRA) to measure the activity of libraries of cis-regulatory
+               sequences (CRSs) across multiple cell types simultaneously. We
+               assayed a library of core promoters in a mixture of HEK293 and
+               K562 cells and showed that scMPRA is a reproducible, highly
+               parallel, single-cell reporter gene assay that detects
+               cell-type-specific cis-regulatory activity. We then measured a
+               library of promoter variants across multiple cell types in live
+               mouse retinas and showed that subtle genetic variants can produce
+               cell-type-specific effects on cis-regulatory activity. We
+               anticipate that scMPRA will be widely applicable for studying the
+               role of CRSs across diverse cell types. A single-cell massively
+               parallel reporter assay is used to compare cis-regulatory
+               sequence activities in cell line models and mouse retinal tissue
+               ex vivo, identifying cell state- and cell-type-specific effects
+               of sequence variation.",
+  month     =  jan,
+  year      =  2023,
+  language  = "en"
+}
+,@ARTICLE{Ghandi2014-hn,
+  title     = "Enhanced regulatory sequence prediction using gapped k-mer
+               features",
+  author    = "Ghandi, Mahmoud and Lee, Dongwon and Mohammad-Noori, Morteza and
+               Beer, Michael A",
+  journal   = "PLoS Comput. Biol.",
+  publisher = "Public Library of Science (PLoS)",
+  volume    =  10,
+  number    =  7,
+  pages     = "e1003711",
+  abstract  = "Oligomers of length k, or k-mers, are convenient and widely used
+               features for modeling the properties and functions of DNA and
+               protein sequences. However, k-mers suffer from the inherent
+               limitation that if the parameter k is increased to resolve longer
+               features, the probability of observing any specific k-mer becomes
+               very small, and k-mer counts approach a binary variable, with
+               most k-mers absent and a few present once. Thus, any statistical
+               learning approach using k-mers as features becomes susceptible to
+               noisy training set k-mer frequencies once k becomes large. To
+               address this problem, we introduce alternative feature sets using
+               gapped k-mers, a new classifier, gkm-SVM, and a general method
+               for robust estimation of k-mer frequencies. To make the method
+               applicable to large-scale genome wide applications, we develop an
+               efficient tree data structure for computing the kernel matrix. We
+               show that compared to our original kmer-SVM and alternative
+               approaches, our gkm-SVM predicts functional genomic regulatory
+               elements and tissue specific enhancers with significantly
+               improved accuracy, increasing the precision by up to a factor of
+               two. We then show that gkm-SVM consistently outperforms kmer-SVM
+               on human ENCODE ChIP-seq datasets, and further demonstrate the
+               general utility of our method using a Naïve-Bayes classifier.
+               Although developed for regulatory sequence analysis, these
+               methods can be applied to any sequence classification problem.",
+  month     =  jul,
+  year      =  2014,
+  language  = "en"
+}
+,@ARTICLE{Nitta2015-rt,
+  title     = "Conservation of transcription factor binding specificities across
+               600 million years of bilateria evolution",
+  author    = "Nitta, Kazuhiro R and Jolma, Arttu and Yin, Yimeng and Morgunova,
+               Ekaterina and Kivioja, Teemu and Akhtar, Junaid and Hens, Korneel
+               and Toivonen, Jarkko and Deplancke, Bart and Furlong, Eileen E M
+               and Taipale, Jussi",
+  journal   = "Elife",
+  publisher = "eLife Sciences Publications Limited",
+  volume    =  4,
+  abstract  = "Divergent morphology of species has largely been ascribed to
+               genetic differences in the tissue-specific expression of
+               proteins, which could be achieved by divergence in cis-regulatory
+               elements or by altering the binding specificity of transcription
+               factors (TFs). The relative importance of the latter has been
+               difficult to assess, as previous systematic analyses of TF
+               binding specificity have been performed using different methods
+               in different species. To address this, we determined the binding
+               specificities of 242 Drosophila TFs, and compared them to human
+               and mouse data. This analysis revealed that TF binding
+               specificities are highly conserved between Drosophila and
+               mammals, and that for orthologous TFs, the similarity extends
+               even to the level of very subtle dinucleotide binding
+               preferences. The few human TFs with divergent specificities
+               function in cell types not found in fruit flies, suggesting that
+               evolution of TF specificities contributes to emergence of novel
+               types of differentiated cells.",
+  month     =  mar,
+  year      =  2015,
+  keywords  = "D. melanogaster; DNA binding specificity; HT-SELEX; chromosomes;
+               evolutionary biology; evolutionary conservation; genes; genomics;
+               human; transcription factors",
+  language  = "en"
+}
+,@ARTICLE{Beby2013-xq,
+  title     = "The homeobox gene {Otx2} in development and disease",
+  author    = "Beby, Francis and Lamonerie, Thomas",
+  journal   = "Exp. Eye Res.",
+  publisher = "Elsevier BV",
+  volume    =  111,
+  pages     = "9--16",
+  abstract  = "The Otx2 gene encodes a transcription factor essential for the
+               normal development of brain, cerebellum, pineal gland, and eye.
+               In the retina, Otx2 has essential functions from early
+               embryogenesis to adulthood. As soon as the optic vesicle is
+               formed, the gene is required for retinal pigment epithelium
+               specification. Otx2 is also a key regulator of photoreceptor
+               genesis and differentiation, and is required after birth for
+               bipolar cells terminal maturation. Otx2 expression is maintained
+               in the differentiated retina wherein the gene is critical for the
+               outer retina maintenance. In the visual cortex, the gene
+               modulates the neuronal plasticity through a paracrine mechanism.
+               OTX2 heterozygous mutations in humans have been linked to severe
+               ocular malformations associated with brain abnormalities and
+               pituitary dysfunction. Recent studies have also established the
+               OTX2 gene as an oncogene for medulloblastoma, a malignant brain
+               tumour originating in the cerebellum.",
+  month     =  jun,
+  year      =  2013,
+  language  = "en"
+}
+,@ARTICLE{Hume2015-xj,
+  title     = "{UniPROBE}, update 2015: new tools and content for the online
+               database of protein-binding microarray data on protein-{DNA}
+               interactions",
+  author    = "Hume, Maxwell A and Barrera, Luis A and Gisselbrecht, Stephen S
+               and Bulyk, Martha L",
+  journal   = "Nucleic Acids Res.",
+  publisher = "Oxford University Press (OUP)",
+  volume    =  43,
+  number    = "Database issue",
+  pages     = "D117--22",
+  abstract  = "The Universal PBM Resource for Oligonucleotide Binding Evaluation
+               (UniPROBE) serves as a convenient source of information on
+               published data generated using universal protein-binding
+               microarray (PBM) technology, which provides in vitro data about
+               the relative DNA-binding preferences of transcription factors for
+               all possible sequence variants of a length k ('k-mers'). The
+               database displays important information about the proteins and
+               displays their DNA-binding specificity data in terms of k-mers,
+               position weight matrices and graphical sequence logos. This
+               update to the database documents the growth of UniPROBE since the
+               last update 4 years ago, and introduces a variety of new features
+               and tools, including a new streamlined pipeline that facilitates
+               data deposition by universal PBM data generators in the research
+               community, a tool that generates putative nonbinding (i.e.
+               negative control) DNA sequences for one or more proteins and
+               novel motifs obtained by analyzing the PBM data using the
+               BEEML-PBM algorithm for motif inference. The UniPROBE database is
+               available at http://uniprobe.org.",
+  month     =  jan,
+  year      =  2015,
+  keywords  = "middle east respiratory syndrome",
+  language  = "en"
+}
+,@ARTICLE{Williaume2021-wk,
+  title     = "Cell geometry, signal dampening, and a bimodal transcriptional
+               response underlie the spatial precision of an {ERK}-mediated
+               embryonic induction",
+  author    = "Williaume, Géraldine and de Buyl, Sophie and Sirour, Cathy and
+               Haupaix, Nicolas and Bettoni, Rossana and Imai, Kaoru S and
+               Satou, Yutaka and Dupont, Geneviève and Hudson, Clare and Yasuo,
+               Hitoyoshi",
+  journal   = "Dev. Cell",
+  publisher = "Elsevier BV",
+  volume    =  56,
+  number    =  21,
+  pages     = "2966--2979.e10",
+  abstract  = "Precise control of lineage segregation is critical for the
+               development of multicellular organisms, but our quantitative
+               understanding of how variable signaling inputs are integrated to
+               activate lineage-specific gene programs remains limited. Here, we
+               show how precisely two out of eight ectoderm cells adopt neural
+               fates in response to ephrin and FGF signals during ascidian
+               neural induction. In each ectoderm cell, FGF signals activate ERK
+               to a level that mirrors its cell contact surface with
+               FGF-expressing mesendoderm cells. This gradual interpretation of
+               FGF inputs is followed by a bimodal transcriptional response of
+               the immediate early gene, Otx, resulting in its activation
+               specifically in the neural precursors. At low levels of ERK, Otx
+               is repressed by an ETS family transcriptional repressor, ERF2.
+               Ephrin signals are critical for dampening ERK activation levels
+               across ectoderm cells so that only neural precursors exhibit
+               above-threshold levels, evade ERF repression, and ``switch on''
+               Otx transcription.",
+  month     =  nov,
+  year      =  2021,
+  keywords  = "ERF; FGF; Otx; ascidian; bimodal transcriptional response;
+               embryo; ephrin-mediated signal dampening; gradual ERK response",
+  language  = "en"
+}
+,@ARTICLE{DaSilva2024-je,
+  title    = "{DNA}-diffusion: Leveraging generative models for controlling
+              chromatin accessibility and gene expression via synthetic
+              regulatory elements",
+  author   = "DaSilva, Lucas Ferreira and Senan, Simon and Patel, Zain Munir and
+              Janardhan Reddy, Aniketh and Gabbita, Sameer and Nussbaum, Zach
+              and Valdez Córdova, César Miguel and Wenteler, Aaron and Weber,
+              Noah and Tunjic, Tin M and Ahmad Khan, Talha and Li, Zelun and
+              Smith, Cameron and Bejan, Matei and Karmel Louis, Lithin and
+              Cornejo, Paola and Connell, Will and Wong, Emily S and Meuleman,
+              Wouter and Pinello, Luca",
+  journal  = "bioRxivorg",
+  pages    = "2024.02.01.578352",
+  abstract = "The challenge of systematically modifying and optimizing
+              regulatory elements for precise gene expression control is central
+              to modern genomics and synthetic biology. Advancements in
+              generative AI have paved the way for designing synthetic sequences
+              with the aim of safely and accurately modulating gene expression.
+              We leverage diffusion models to design context-specific DNA
+              regulatory sequences, which hold significant potential toward
+              enabling novel therapeutic applications requiring precise
+              modulation of gene expression. Our framework uses a cell
+              type-specific diffusion model to generate synthetic 200 bp
+              regulatory elements based on chromatin accessibility across
+              different cell types. We evaluate the generated sequences based on
+              key metrics to ensure they retain properties of endogenous
+              sequences: transcription factor binding site composition,
+              potential for cell type-specific chromatin accessibility, and
+              capacity for sequences generated by DNA diffusion to activate gene
+              expression in different cell contexts using state-of-the-art
+              prediction models. Our results demonstrate the ability to robustly
+              generate DNA sequences with cell type-specific regulatory
+              potential. DNA-Diffusion paves the way for revolutionizing a
+              regulatory modulation approach to mammalian synthetic biology and
+              precision gene therapy.",
+  month    =  feb,
+  year     =  2024,
+  language = "en"
+}
+,@ARTICLE{Kelley2016-oh,
+  title    = "Basset: learning the regulatory code of the accessible genome with
+              deep convolutional neural networks",
+  author   = "Kelley, David R and Snoek, Jasper and Rinn, John L",
+  journal  = "Genome Res",
+  volume   =  26,
+  number   =  7,
+  pages    = "990--999",
+  abstract = "The complex language of eukaryotic gene expression remains
+              incompletely understood. Despite the importance suggested by many
+              noncoding variants statistically associated with human disease,
+              nearly all such variants have unknown mechanisms. Here, we address
+              this challenge using an approach based on a recent machine
+              learning advance-deep convolutional neural networks (CNNs). We
+              introduce the open source package Basset to apply CNNs to learn
+              the functional activity of DNA sequences from genomics data. We
+              trained Basset on a compendium of accessible genomic sites mapped
+              in 164 cell types by DNase-seq, and demonstrate greater predictive
+              accuracy than previous methods. Basset predictions for the change
+              in accessibility between variant alleles were far greater for
+              Genome-wide association study (GWAS) SNPs that are likely to be
+              causal relative to nearby SNPs in linkage disequilibrium with
+              them. With Basset, a researcher can perform a single sequencing
+              assay in their cell type of interest and simultaneously learn that
+              cell's chromatin accessibility code and annotate every mutation in
+              the genome with its influence on present accessibility and latent
+              potential for accessibility. Thus, Basset offers a powerful
+              computational approach to annotate and interpret the noncoding
+              genome.",
+  month    =  jul,
+  year     =  2016,
+  language = "en"
+}
+,@ARTICLE{Schachterle2012-kq,
+  title     = "{ETS}-dependent regulation of a distal {Gata4} cardiac enhancer",
+  author    = "Schachterle, William and Rojas, Anabel and Xu, Shan-Mei and
+               Black, Brian L",
+  journal   = "Dev. Biol.",
+  publisher = "Elsevier BV",
+  volume    =  361,
+  number    =  2,
+  pages     = "439--449",
+  abstract  = "The developing heart contains an inner tube of specialized
+               endothelium known as endocardium, which performs multiple
+               essential functions. In spite of the essential role of the
+               endocardium in heart development and function, the
+               transcriptional pathways that regulate its development remain
+               largely undefined. GATA4 is a zinc finger transcription factor
+               that is expressed in multiple cardiovascular lineages and is
+               required for endocardial cushion development and embryonic
+               viability, but the transcriptional pathways upstream of Gata4 in
+               the endocardium and its derivatives in the endocardial cushions
+               are unknown. Here, we describe a distal enhancer from the mouse
+               Gata4 gene that is briefly active in multiple cardiac lineages
+               early in cardiac development but restricts to the endocardium
+               where it remains active through cardiogenesis. The activity of
+               this Gata4 cardiac enhancer in transgenic embryos and in cultured
+               aortic endothelial cells is dependent on four ETS sites. To
+               identify which ETS transcription factors might be involved in
+               Gata4 regulation via the ETS sites in the enhancer, we determined
+               the expression profile of 24 distinct ETS factors in embryonic
+               mouse hearts. Among multiple ETS transcripts present, ETS1, FLI1,
+               ETV1, ETV5, ERG, and ETV6 were the most abundant in the early
+               embryonic heart. We found that ETS1, FLI1, and ERG were strongly
+               expressed in the heart at embryonic day 8.5 and that ETS1 and ERG
+               bound to the endogenous Gata4 enhancer in cultured endothelial
+               cells. Thus, these studies define the ETS expression profile in
+               the early embryonic heart and identify an ETS-dependent enhancer
+               from the Gata4 locus.",
+  month     =  jan,
+  year      =  2012,
+  language  = "en"
+}
+,@ARTICLE{Jindal2021-zk,
+  title    = "Enhancer grammar in development, evolution, and disease:
+              dependencies and interplay",
+  author   = "Jindal, Granton A and Farley, Emma K",
+  journal  = "Dev. Cell",
+  volume   =  56,
+  number   =  5,
+  pages    = "575--587",
+  abstract = "Each language has standard books describing that language's
+              grammatical rules. Biologists have searched for similar, albeit
+              more complex, principles relating enhancer sequence to gene
+              expression. Here, we review the literature on enhancer grammar. We
+              introduce dependency grammar, a model where enhancers encode
+              information based on dependencies between enhancer features shaped
+              by mechanistic, evolutionary, and biological constraints.
+              Classifying enhancers based on the types of dependencies may
+              identify unifying principles relating enhancer sequence to gene
+              expression. Such rules would allow us to read the instructions for
+              development within genomes and pinpoint causal enhancer variants
+              underlying disease and evolutionary changes.",
+  month    =  mar,
+  year     =  2021,
+  language = "en"
+}
+,@PHDTHESIS{Solvason2024-gi,
+  title   = "Elucidating Mechanisms Governing Enhancer Function in Development
+             and Disease",
+  author  = "Solvason, Jesse Joseph",
+  address = "UC San Diego",
+  year    =  2024
+}
+,@ARTICLE{Rothbacher2007-rt,
+  title    = "A combinatorial code of maternal {GATA}, Ets and
+              beta-catenin-{TCF} transcription factors specifies and patterns
+              the early ascidian ectoderm",
+  author   = "Rothbächer, Ute and Bertrand, Vincent and Lamy, Clement and
+              Lemaire, Patrick",
+  journal  = "Development",
+  volume   =  134,
+  number   =  22,
+  pages    = "4023--4032",
+  abstract = "Our understanding of the maternal factors that initiate early
+              chordate development, and of their direct zygotic targets, is
+              still fragmentary. A molecular cascade is emerging for the
+              mesendoderm, but less is known about the ectoderm, giving rise to
+              epidermis and nervous tissue. Our cis-regulatory analysis
+              surprisingly places the maternal transcription factor Ci-GATAa
+              (GATA4/5/6) at the top of the ectodermal regulatory network in
+              ascidians. Initially distributed throughout the embryo, Ci-GATAa
+              activity is progressively repressed in vegetal territories by
+              accumulating maternal beta-catenin. Once restricted to the animal
+              hemisphere, Ci-GATAa directly activates two types of zygotic
+              ectodermal genes. First, Ci-fog is activated from the 8-cell stage
+              throughout the ectoderm, then Ci-otx is turned on from the 32-cell
+              stage in neural precursors only. Whereas the enhancers of both
+              genes contain critical and interchangeable GATA sites, their
+              distinct patterns of activation stem from the additional presence
+              of two Ets sites in the Ci-otx enhancer. Initially characterized
+              as activating elements in the neural lineages, these Ets sites
+              additionally act as repressors in non-neural lineages, and
+              restrict GATA-mediated activation of Ci-otx. We thus identify a
+              precise combinatorial code of maternal factors responsible for
+              zygotic onset of a chordate ectodermal genetic program.",
+  month    =  nov,
+  year     =  2007,
+  language = "en"
+}
+,@ARTICLE{Penzar2023-vr,
+  title    = "{LegNet}: a best-in-class deep learning model for short {DNA}
+              regulatory regions",
+  author   = "Penzar, Dmitry and Nogina, Daria and Noskova, Elizaveta and
+              Zinkevich, Arsenii and Meshcheryakov, Georgy and Lando, Andrey and
+              Rafi, Abdul Muntakim and de Boer, Carl and Kulakovskiy, Ivan V",
+  journal  = "Bioinformatics",
+  volume   =  39,
+  number   =  8,
+  abstract = "MOTIVATION: The increasing volume of data from high-throughput
+              experiments including parallel reporter assays facilitates the
+              development of complex deep-learning approaches for modeling DNA
+              regulatory grammar. RESULTS: Here, we introduce LegNet, an
+              EfficientNetV2-inspired convolutional network for modeling short
+              gene regulatory regions. By approaching the sequence-to-expression
+              regression problem as a soft classification task, LegNet secured
+              first place for the autosome.org team in the DREAM 2022 challenge
+              of predicting gene expression from gigantic parallel reporter
+              assays. Using published data, here, we demonstrate that LegNet
+              outperforms existing models and accurately predicts gene
+              expression per se as well as the effects of single-nucleotide
+              variants. Furthermore, we show how LegNet can be used in a
+              diffusion network manner for the rational design of promoter
+              sequences yielding the desired expression level. AVAILABILITY AND
+              IMPLEMENTATION: https://github.com/autosome-ru/LegNet. The GitHub
+              repository includes Jupyter Notebook tutorials and Python scripts
+              under the MIT license to reproduce the results presented in the
+              study.",
+  month    =  aug,
+  year     =  2023,
+  language = "en"
+}
+,@ARTICLE{Khoueiry2010-eh,
+  title    = "A cis-regulatory signature in ascidians and flies, independent of
+              transcription factor binding sites",
+  author   = "Khoueiry, Pierre and Rothbächer, Ute and Ohtsuka, Yukio and Daian,
+              Fabrice and Frangulian, Eric and Roure, Agnès and Dubchak, Inna
+              and Lemaire, Patrick",
+  journal  = "Curr. Biol.",
+  volume   =  20,
+  number   =  9,
+  pages    = "792--802",
+  abstract = "BACKGROUND: Transcription initiation is controlled by
+              cis-regulatory modules. Although these modules are usually made of
+              clusters of short transcription factor binding sites, a small
+              minority of such clusters in the genome have cis-regulatory
+              activity. This paradox is currently unsolved. RESULTS: To identify
+              what discriminates active from inactive clusters, we focused our
+              attention on short topologically unconstrained clusters of two ETS
+              and two GATA binding sites, similar to the early neural enhancer
+              of Ciona intestinalis Otx. We first computationally identified 55
+              such clusters, conserved between the two Ciona genomes. In vivo
+              assay of the activity of 19 hits identified three novel early
+              neural enhancers, all located next to genes coexpressed with Otx.
+              Optimization of ETS and GATA binding sites was not always
+              sufficient to confer activity to inactive clusters. Rather, a
+              dinucleotide sequence code associated to nucleosome depletion
+              showed a robust correlation with enhancer potential.
+              Identification of a large collection of Ciona regulatory regions
+              revealed that predicted nucleosome depletion constitutes a general
+              signature of Ciona enhancers, which is conserved between
+              orthologous loci in the two Ciona genomes and which partitions
+              conserved noncoding sequences into a major nucleosome-bound
+              fraction and a minor nucleosome-free fraction with higher
+              cis-regulatory potential. We also found this signature in a large
+              fraction of short Drosophila cis-regulatory modules. CONCLUSION:
+              This study indicates that a sequence-based dinucleotide signature,
+              previously associated with nucleosome depletion and independent of
+              transcription factor binding sites, contributes to the definition
+              of a local cis-regulatory potential in two metazoa, Ciona
+              intestinalis and Drosophila melanogaster.",
+  month    =  may,
+  year     =  2010,
+  language = "en"
+}
+,@ARTICLE{De_Almeida2022-aa,
+  title     = "{DeepSTARR} predicts enhancer activity from {DNA} sequence and
+               enables the de novo design of synthetic enhancers",
+  author    = "de Almeida, Bernardo P and Reiter, Franziska and Pagani, Michaela
+               and Stark, Alexander",
+  journal   = "Nat. Genet.",
+  publisher = "Nature Publishing Group",
+  volume    =  54,
+  number    =  5,
+  pages     = "613--624",
+  abstract  = "Enhancer sequences control gene expression and comprise binding
+               sites (motifs) for different transcription factors (TFs). Despite
+               extensive genetic and computational studies, the relationship
+               between DNA sequence and regulatory activity is poorly
+               understood, and de novo enhancer design has been challenging.
+               Here, we built a deep-learning model, DeepSTARR, to
+               quantitatively predict the activities of thousands of
+               developmental and housekeeping enhancers directly from DNA
+               sequence in Drosophila melanogaster S2 cells. The model learned
+               relevant TF motifs and higher-order syntax rules, including
+               functionally nonequivalent instances of the same TF motif that
+               are determined by motif-flanking sequence and intermotif
+               distances. We validated these rules experimentally and
+               demonstrated that they can be generalized to humans by testing
+               more than 40,000 wildtype and mutant Drosophila and human
+               enhancers. Finally, we designed and functionally validated
+               synthetic enhancers with desired activities de novo. A
+               deep-learning model called DeepSTARR quantitatively predicts
+               enhancer activity on the basis of DNA sequence. The model learns
+               relevant motifs and syntax rules, allowing for the design of
+               synthetic enhancers with specific strengths.",
+  month     =  may,
+  year      =  2022,
+  language  = "en"
+}
+,@ARTICLE{Taskiran2023-xz,
+  title     = "Cell type directed design of synthetic enhancers",
+  author    = "Taskiran, Ibrahim I and Spanier, Katina I and Dickmänken, Hannah
+               and Kempynck, Niklas and Pančíková, Alexandra and Ekşi, Eren Can
+               and Hulselmans, Gert and Ismail, Joy N and Theunis, Koen and
+               Vandepoel, Roel and Christiaens, Valerie and Mauduit, David and
+               Aerts, Stein",
+  journal   = "Nature",
+  publisher = "Nature Publishing Group",
+  pages     = "1--3",
+  abstract  = "Transcriptional enhancers act as docking stations for
+               combinations of transcription factors (TFs) and thereby regulate
+               spatiotemporal activation of their target genes. It has been a
+               long-standing goal in the field to decode the regulatory logic of
+               an enhancer and to understand the details of how spatiotemporal
+               gene expression is encoded in an enhancer sequence. Here, we show
+               that deep learning models can be used to efficiently design
+               synthetic, cell type specific enhancers, starting from random
+               sequences, and that this optimization process allows for a
+               detailed tracing of enhancer features at single-nucleotide
+               resolution. We evaluate the function of fully synthetic enhancers
+               to specifically target Kenyon cells or glial cells in the fruit
+               fly brain using transgenic animals. We further exploit enhancer
+               design to create “dual-code” enhancers that target two cell
+               types, and minimal enhancers smaller than 50 base pairs that are
+               fully functional. By examining the state space searches towards
+               local optima, we characterise enhancer codes through the
+               strength, combination, and arrangement of TF activator and TF
+               repressor motifs. Finally, we apply the same strategies to
+               successfully design human enhancers, which adhere to similar
+               enhancer rules as Drosophila enhancers. Enhancer design guided by
+               deep learning leads to better understanding of how enhancers work
+               and shows that their code can be exploited to manipulate cell
+               states.",
+  month     =  dec,
+  year      =  2023,
+  language  = "en"
+}
+,@ARTICLE{Lalanne2024-ts,
+  title     = "Multiplex profiling of developmental cis-regulatory elements with
+               quantitative single-cell expression reporters",
+  author    = "Lalanne, Jean-Benoît and Regalado, Samuel G and Domcke, Silvia
+               and Calderon, Diego and Martin, Beth K and Li, Xiaoyi and Li,
+               Tony and Suiter, Chase C and Lee, Choli and Trapnell, Cole and
+               Shendure, Jay",
+  journal   = "Nature Methods",
+  publisher = "Nature Publishing Group",
+  volume    =  21,
+  number    =  6,
+  pages     = "983--993",
+  abstract  = "The inability to scalably and precisely measure the activity of
+               developmental cis-regulatory elements (CREs) in multicellular
+               systems is a bottleneck in genomics. Here we develop a dual RNA
+               cassette that decouples the detection and quantification tasks
+               inherent to multiplex single-cell reporter assays. The resulting
+               measurement of reporter expression is accurate over multiple
+               orders of magnitude, with a precision approaching the limit set
+               by Poisson counting noise. Together with RNA barcode
+               stabilization via circularization, these scalable single-cell
+               quantitative expression reporters provide high-contrast readouts,
+               analogous to classic in situ assays but entirely from sequencing.
+               Screening >200 regions of accessible chromatin in a multicellular
+               in vitro model of early mammalian development, we identify 13 (8
+               previously uncharacterized) autonomous and cell-type-specific
+               developmental CREs. We further demonstrate that chimeric CRE
+               pairs generate cognate two-cell-type activity profiles and assess
+               gain- and loss-of-function multicellular expression phenotypes
+               from CRE variants with perturbed transcription factor binding
+               sites. Single-cell quantitative expression reporters can be
+               applied in developmental and multicellular systems to
+               quantitatively characterize native, perturbed and synthetic CREs
+               at scale, with high sensitivity and at single-cell resolution.
+               Single-cell quantitative expression reporters enable
+               high-sensitivity quantitative characterization of cis-regulatory
+               elements at the single-cell level in multicellular systems.",
+  month     =  may,
+  year      =  2024,
+  language  = "en"
+}
+,@ARTICLE{White2016-ks,
+  title     = "A simple grammar defines activating and repressing cis-regulatory
+               elements in photoreceptors",
+  author    = "White, Michael A and Kwasnieski, Jamie C and Myers, Connie A and
+               Shen, Susan Q and Corbo, Joseph C and Cohen, Barak A",
+  journal   = "Cell Rep.",
+  publisher = "Elsevier",
+  volume    =  17,
+  number    =  5,
+  pages     = "1247--1254",
+  abstract  = "Transcription factors often activate and repress different target
+               genes in the same cell. How activation and repression are encoded
+               by different arrangements of transcription factor binding sites
+               in cis-regulatory elements is poorly understood. We investigated
+               how sites for the transcription factor CRX encode both activation
+               and repression in photoreceptors by assaying thousands of genomic
+               and synthetic cis-regulatory elements in wild-type and Crx-/-
+               retinas. We found that sequences with high affinity for CRX
+               repress transcription, whereas sequences with lower affinity
+               activate. This rule is modified by a cooperative interaction
+               between CRX sites and sites for the transcription factor NRL,
+               which overrides the repressive effect of high affinity for CRX.
+               Our results show how simple rearrangements of transcription
+               factor binding sites encode qualitatively different responses to
+               a single transcription factor and explain how CRX plays multiple
+               cis-regulatory roles in the same cell.",
+  month     =  oct,
+  year      =  2016,
+  keywords  = "activation; massively parallel reporter assay; photoreceptors;
+               repression; transcription factors",
+  language  = "en"
+}
+,@ARTICLE{Woznica2012-jd,
+  title     = "Initial deployment of the cardiogenic gene regulatory network in
+               the basal chordate, Ciona intestinalis",
+  author    = "Woznica, Arielle and Haeussler, Maximilian and Starobinska, Ella
+               and Jemmett, Jessica and Li, Younan and Mount, David and
+               Davidson, Brad",
+  journal   = "Dev. Biol.",
+  publisher = "Elsevier BV",
+  volume    =  368,
+  number    =  1,
+  pages     = "127--139",
+  abstract  = "The complex, partially redundant gene regulatory architecture
+               underlying vertebrate heart formation has been difficult to
+               characterize. Here, we dissect the primary cardiac gene
+               regulatory network in the invertebrate chordate, Ciona
+               intestinalis. The Ciona heart progenitor lineage is first
+               specified by Fibroblast Growth Factor/Map Kinase (FGF/MapK)
+               activation of the transcription factor Ets1/2 (Ets). Through
+               microarray analysis of sorted heart progenitor cells, we
+               identified the complete set of primary genes upregulated by
+               FGF/Ets shortly after heart progenitor emergence. Combinatorial
+               sequence analysis of these co-regulated genes generated a
+               hypothetical regulatory code consisting of Ets binding sites
+               associated with a specific co-motif, ATTA. Through extensive
+               reporter analysis, we confirmed the functional importance of the
+               ATTA co-motif in primary heart progenitor gene regulation. We
+               then used the Ets/ATTA combination motif to successfully predict
+               a number of additional heart progenitor gene regulatory elements,
+               including an intronic element driving expression of the core
+               conserved cardiac transcription factor, GATAa. This work
+               significantly advances our understanding of the Ciona heart gene
+               network. Furthermore, this work has begun to elucidate the
+               precise regulatory architecture underlying the conserved, primary
+               role of FGF/Ets in chordate heart lineage specification.",
+  month     =  aug,
+  year      =  2012,
+  language  = "en"
+}
+,@ARTICLE{Benjamini1995-da,
+  title     = "Controlling the False Discovery Rate: A Practical and Powerful
+               Approach to Multiple Testing",
+  author    = "Benjamini, Yoav and Hochberg, Yosef",
+  journal   = "J. R. Stat. Soc. Series B Stat. Methodol.",
+  publisher = "[Royal Statistical Society, Wiley]",
+  volume    =  57,
+  number    =  1,
+  pages     = "289--300",
+  abstract  = "[The common approach to the multiplicity problem calls for
+               controlling the familywise error rate (FWER). This approach,
+               though, has faults, and we point out a few. A different approach
+               to problems of multiple significance testing is presented. It
+               calls for controlling the expected proportion of falsely rejected
+               hypotheses-the false discovery rate. This error rate is
+               equivalent to the FWER when all hypotheses are true but is
+               smaller otherwise. Therefore, in problems where the control of
+               the false discovery rate rather than that of the FWER is desired,
+               there is potential for a gain in power. A simple sequential
+               Bonferroni-type procedure is proved to control the false
+               discovery rate for independent test statistics, and a simulation
+               study shows that the gain in power is substantial. The use of the
+               new procedure and the appropriateness of the criterion are
+               illustrated with examples.]",
+  year      =  1995
+}
+,@ARTICLE{Badis2009-hv,
+  title     = "Diversity and complexity in {DNA} recognition by transcription
+               factors",
+  author    = "Badis, Gwenael and Berger, Michael F and Philippakis, Anthony A
+               and Talukder, Shaheynoor and Gehrke, Andrew R and Jaeger, Savina
+               A and Chan, Esther T and Metzler, Genita and Vedenko, Anastasia
+               and Chen, Xiaoyu and Kuznetsov, Hanna and Wang, Chi-Fong and
+               Coburn, David and Newburger, Daniel E and Morris, Quaid and
+               Hughes, Timothy R and Bulyk, Martha L",
+  journal   = "Science",
+  publisher = "American Association for the Advancement of Science (AAAS)",
+  volume    =  324,
+  number    =  5935,
+  pages     = "1720--1723",
+  abstract  = "Sequence preferences of DNA binding proteins are a primary
+               mechanism by which cells interpret the genome. Despite the
+               central importance of these proteins in physiology, development,
+               and evolution, comprehensive DNA binding specificities have been
+               determined experimentally for only a few proteins. Here, we used
+               microarrays containing all 10-base pair sequences to examine the
+               binding specificities of 104 distinct mouse DNA binding proteins
+               representing 22 structural classes. Our results reveal a complex
+               landscape of binding, with virtually every protein analyzed
+               possessing unique preferences. Roughly half of the proteins each
+               recognized multiple distinctly different sequence motifs,
+               challenging our molecular understanding of how proteins interact
+               with their DNA binding sites. This complexity in DNA recognition
+               may be important in gene regulation and in the evolution of
+               transcriptional regulatory networks.",
+  month     =  jun,
+  year      =  2009,
+  language  = "en"
+}
+,@ARTICLE{De_Boer2020-mw,
+  title    = "Deciphering eukaryotic gene-regulatory logic with 100 million
+              random promoters",
+  author   = "de Boer, Carl G and Vaishnav, Eeshit Dhaval and Sadeh, Ronen and
+              Abeyta, Esteban Luis and Friedman, Nir and Regev, Aviv",
+  journal  = "Nat. Biotechnol.",
+  volume   =  38,
+  number   =  1,
+  pages    = "56--65",
+  abstract = "How transcription factors (TFs) interpret cis-regulatory DNA
+              sequence to control gene expression remains unclear, largely
+              because past studies using native and engineered sequences had
+              insufficient scale. Here, we measure the expression output of >100
+              million synthetic yeast promoter sequences that are fully random.
+              These sequences yield diverse, reproducible expression levels that
+              can be explained by their chance inclusion of functional TF
+              binding sites. We use machine learning to build interpretable
+              models of transcriptional regulation that predict ~94\% of the
+              expression driven from independent test promoters and ~89\% of the
+              expression driven from native yeast promoter fragments. These
+              models allow us to characterize each TF's specificity, activity
+              and interactions with chromatin. TF activity depends on
+              binding-site strand, position, DNA helical face and chromatin
+              context. Notably, expression level is influenced by weak
+              regulatory interactions, which confound designed-sequence studies.
+              Our analyses show that massive-throughput assays of fully random
+              DNA can provide the big data necessary to develop complex,
+              predictive models of gene regulation.",
+  month    =  jan,
+  year     =  2020,
+  language = "en"
+}
+,@ARTICLE{Farley2015-xx,
+  title    = "Suboptimization of developmental enhancers",
+  author   = "Farley, Emma K and Olson, Katrina M and Zhang, Wei and Brandt,
+              Alexander J and Rokhsar, Daniel S and Levine, Michael S",
+  journal  = "Science",
+  volume   =  350,
+  number   =  6258,
+  pages    = "325--328",
+  abstract = "Transcriptional enhancers direct precise on-off patterns of gene
+              expression during development. To explore the basis for this
+              precision, we conducted a high-throughput analysis of the Otx-a
+              enhancer, which mediates expression in the neural plate of Ciona
+              embryos in response to fibroblast growth factor (FGF) signaling
+              and a localized GATA determinant. We provide evidence that
+              enhancer specificity depends on submaximal recognition motifs
+              having reduced binding affinities (``suboptimization''). Native
+              GATA and ETS (FGF) binding sites contain imperfect matches to
+              consensus motifs. Perfect matches mediate robust but ectopic
+              patterns of gene expression. The native sites are not arranged at
+              optimal intervals, and subtle changes in their spacing alter
+              enhancer activity. Multiple tiers of enhancer suboptimization
+              produce specific, but weak, patterns of expression, and we suggest
+              that clusters of weak enhancers, including certain
+              ``superenhancers,'' circumvent this trade-off in specificity and
+              activity.",
+  month    =  oct,
+  year     =  2015,
+  language = "en"
+}
+,@ARTICLE{Koo2021-ly,
+  title    = "Global importance analysis: An interpretability method to quantify
+              importance of genomic features in deep neural networks",
+  author   = "Koo, Peter K and Majdandzic, Antonio and Ploenzke, Matthew and
+              Anand, Praveen and Paul, Steffan B",
+  journal  = "PLoS Comput. Biol.",
+  volume   =  17,
+  number   =  5,
+  pages    = "e1008925",
+  abstract = "Deep neural networks have demonstrated improved performance at
+              predicting the sequence specificities of DNA- and RNA-binding
+              proteins compared to previous methods that rely on k-mers and
+              position weight matrices. To gain insights into why a DNN makes a
+              given prediction, model interpretability methods, such as
+              attribution methods, can be employed to identify motif-like
+              representations along a given sequence. Because explanations are
+              given on an individual sequence basis and can vary substantially
+              across sequences, deducing generalizable trends across the dataset
+              and quantifying their effect size remains a challenge. Here we
+              introduce global importance analysis (GIA), a model
+              interpretability method that quantifies the population-level
+              effect size that putative patterns have on model predictions. GIA
+              provides an avenue to quantitatively test hypotheses of putative
+              patterns and their interactions with other patterns, as well as
+              map out specific functions the network has learned. As a case
+              study, we demonstrate the utility of GIA on the computational task
+              of predicting RNA-protein interactions from sequence. We first
+              introduce a convolutional network, we call ResidualBind, and
+              benchmark its performance against previous methods on RNAcompete
+              data. Using GIA, we then demonstrate that in addition to sequence
+              motifs, ResidualBind learns a model that considers the number of
+              motifs, their spacing, and sequence context, such as RNA secondary
+              structure and GC-bias.",
+  month    =  may,
+  year     =  2021,
+  language = "en"
+}
+,@ARTICLE{Ghandi2014-ql,
+  title    = "Robust k-mer frequency estimation using gapped k-mers",
+  author   = "Ghandi, Mahmoud and Mohammad-Noori, Morteza and Beer, Michael A",
+  journal  = "J. Math. Biol.",
+  volume   =  69,
+  number   =  2,
+  pages    = "469--500",
+  abstract = "Oligomers of fixed length, k, commonly known as k-mers, are often
+              used as fundamental elements in the description of DNA sequence
+              features of diverse biological function, or as intermediate
+              elements in the constuction of more complex descriptors of
+              sequence features such as position weight matrices. k-mers are
+              very useful as general sequence features because they constitute a
+              complete and unbiased feature set, and do not require
+              parameterization based on incomplete knowledge of biological
+              mechanisms. However, a fundamental limitation in the use of k-mers
+              as sequence features is that as k is increased, larger spatial
+              correlations in DNA sequence elements can be described, but the
+              frequency of observing any specific k-mer becomes very small, and
+              rapidly approaches a sparse matrix of binary counts. Thus any
+              statistical learning approach using k-mers will be susceptible to
+              noisy estimation of k-mer frequencies once k becomes large.
+              Because all molecular DNA interactions have limited spatial
+              extent, gapped k-mers often carry the relevant biological signal.
+              Here we use gapped k-mer counts to more robustly estimate the
+              ungapped k-mer frequencies, by deriving an equation for the
+              minimum norm estimate of k-mer frequencies given an observed set
+              of gapped k-mer frequencies. We demonstrate that this approach
+              provides a more accurate estimate of the k-mer frequencies in real
+              biological sequences using a sample of CTCF binding sites in the
+              human genome.",
+  month    =  aug,
+  year     =  2014,
+  language = "en"
+}
+,@ARTICLE{Novakovsky2022-ft,
+  title     = "Obtaining genetics insights from deep learning via explainable
+               artificial intelligence",
+  author    = "Novakovsky, Gherman and Dexter, Nick and Libbrecht, Maxwell W and
+               Wasserman, Wyeth W and Mostafavi, Sara",
+  journal   = "Nat. Rev. Genet.",
+  publisher = "Nature Publishing Group",
+  pages     = "1--13",
+  abstract  = "Artificial intelligence (AI) models based on deep learning now
+               represent the state of the art for making functional predictions
+               in genomics research. However, the underlying basis on which
+               predictive models make such predictions is often unknown. For
+               genomics researchers, this missing explanatory information would
+               frequently be of greater value than the predictions themselves,
+               as it can enable new insights into genetic processes. We review
+               progress in the emerging area of explainable AI (xAI), a field
+               with the potential to empower life science researchers to gain
+               mechanistic insights into complex deep learning models. We
+               discuss and categorize approaches for model interpretation,
+               including an intuitive understanding of how each approach works
+               and their underlying assumptions and limitations in the context
+               of typical high-throughput biological datasets. In this Review,
+               the authors describe advances in deep learning approaches in
+               genomics, whereby researchers are moving beyond the typical
+               ‘black box’ nature of models to obtain biological insights
+               through explainable artificial intelligence (xAI).",
+  month     =  oct,
+  year      =  2022,
+  language  = "en"
+}
+,@ARTICLE{Bertrand2003-su,
+  title     = "Neural tissue in ascidian embryos is induced by {FGF9}/16/20,
+               acting via a combination of maternal {GATA} and Ets transcription
+               factors",
+  author    = "Bertrand, Vincent and Hudson, Clare and Caillol, Danielle and
+               Popovici, Cornel and Lemaire, Patrick",
+  journal   = "Cell",
+  publisher = "Elsevier BV",
+  volume    =  115,
+  number    =  5,
+  pages     = "615--627",
+  abstract  = "In chordates, formation of neural tissue from ectodermal cells
+               requires an induction. The molecular nature of the inducer
+               remains controversial in vertebrates. Here, using the early
+               neural marker Otx as an entry point, we dissected the neural
+               induction pathway in the simple embryos of Ciona intestinalis. We
+               first isolated the regulatory element driving Otx expression in
+               the prospective neural tissue, showed that this element directly
+               responds to FGF signaling and that FGF9/16/20 acts as an
+               endogenous neural inducer. Binding site analysis and gene loss of
+               function established that FGF9/16/20 induces neural tissue in the
+               ectoderm via a synergy between two maternal response factors.
+               Ets1/2 mediates general FGF responsiveness, while the restricted
+               activity of GATAa targets the neural program to the ectoderm.
+               Thus, our study identifies an endogenous FGF neural inducer and
+               its early downstream gene cascade. It also reveals a role for
+               GATA factors in FGF signaling.",
+  month     =  nov,
+  year      =  2003,
+  language  = "en"
+}
+,@ARTICLE{Levine2010-ry,
+  title    = "Transcriptional enhancers in animal development and evolution",
+  author   = "Levine, Mike",
+  journal  = "Curr. Biol.",
+  volume   =  20,
+  number   =  17,
+  pages    = "R754--63",
+  abstract = "Regulatory DNAs serve as templates to bring weakly interacting
+              transcription factors into close proximity so they can work
+              synergistically to switch genes on and off in time and space. Most
+              of these regulatory DNAs are enhancers that can work over long
+              distances--a million base pairs or more in mammals--to control
+              gene expression. Critical enhancers are sometimes even found
+              within the introns of neighboring genes. This review summarizes
+              well-defined examples of enhancers controlling key processes in
+              animal development. Potential mechanisms of transcriptional
+              synergy are discussed with regard to enhancer structure and
+              contemporary ChIP-sequencing assays, whereby just a small fraction
+              of the observed binding sites represent bona fide regulatory DNAs.
+              Finally, there is a discussion of how enhancer evolution can
+              produce novelty in animal morphology and of the prospects for
+              reconstructing transitions in animal evolution by introducing
+              derived enhancers in basal ancestors.",
+  month    =  sep,
+  year     =  2010,
+  language = "en"
+}
+,@ARTICLE{Gosai2023-cw,
+  title    = "Machine-guided design of synthetic cell type-specific
+              cis-regulatory elements",
+  author   = "Gosai, S J and Castro, R I and Fuentes, N and Butts, J C and
+              Kales, S and Noche, R R and Mouri, K and Sabeti, P C and Reilly, S
+              K and Tewhey, R",
+  journal  = "bioRxiv",
+  pages    = "2023.08.08.552077",
+  abstract = "Cis -regulatory elements (CREs) control gene expression,
+              orchestrating tissue identity, developmental timing, and stimulus
+              responses, which collectively define the thousands of unique cell
+              types in the body. While there is great potential for
+              strategically incorporating CREs in therapeutic or biotechnology
+              applications that require tissue specificity, there is no
+              guarantee that an optimal CRE for an intended purpose has arisen
+              naturally through evolution. Here, we present a platform to
+              engineer and validate synthetic CREs capable of driving gene
+              expression with programmed cell type specificity. We leverage
+              innovations in deep neural network modeling of CRE activity across
+              three cell types, efficient in silico optimization, and massively
+              parallel reporter assays (MPRAs) to design and empirically test
+              thousands of CREs. Through in vitro and in vivo validation, we
+              show that synthetic sequences outperform natural sequences from
+              the human genome in driving cell type-specific expression.
+              Synthetic sequences leverage unique sequence syntax to promote
+              activity in the on-target cell type and simultaneously reduce
+              activity in off-target cells. Together, we provide a generalizable
+              framework to prospectively engineer CREs and demonstrate the
+              required literacy to write regulatory code that is fit-for-purpose
+              in vivo across vertebrates. \#\#\# Competing Interest Statement
+              PCS is a co-founder of and consultant to Sherlock Biosciences and
+              Board Member of Danaher Corporation. PCS and RT have filed
+              intellectual property related to MPRA. SJG, RIC, SKR, PCS, and RT
+              have filed a provisional patent application related to work
+              described here.",
+  month    =  aug,
+  year     =  2023,
+  language = "en"
+}
+,@ARTICLE{Acampora2005-bo,
+  title    = "Otx genes in the evolution of the vertebrate brain",
+  author   = "Acampora, Dario and Annino, Alessandro and Tuorto, Francesca and
+              Puelles, Eduardo and Lucchesi, Walter and Papalia, Alessandro and
+              Simeone, Antonio",
+  journal  = "Brain Res. Bull.",
+  volume   =  66,
+  number   = "4-6",
+  pages    = "410--420",
+  abstract = "Only until a decade ago, animal phylogeny was traditionally based
+              on the assumption that evolution of bilaterians went from simple
+              to complex through gradual steps in which the extant species would
+              represent grades of intermediate complexity that reflect the
+              organizational levels of their ancestors. The advent of more
+              sophisticated molecular biology techniques combined to an
+              increasing variety of functional experiments has provided new
+              tools, which lead us to consider evolutionary studies under a
+              brand new light. An ancestral versus derived low-complexity of a
+              given organism has now to be carefully re-assessed and also the
+              molecular data so far accumulated needs to be re-evaluated.
+              Conserved gene families expressed in the nervous system of all the
+              species have been extensively used to reconstruct evolutionary
+              steps, which may lead to identify the morphological as well as
+              molecular features of the last common ancestor of bilaterians
+              (Urbilateria). The Otx gene family is among these and will be here
+              reviewed.",
+  month    =  sep,
+  year     =  2005,
+  language = "en"
+}
+,@ARTICLE{Gupta2007-zw,
+  title    = "Quantifying similarity between motifs",
+  author   = "Gupta, Shobhit and Stamatoyannopoulos, John A and Bailey, Timothy
+              L and Noble, William Stafford",
+  journal  = "Genome Biol.",
+  volume   =  8,
+  number   =  2,
+  pages    = "R24",
+  abstract = "A common question within the context of de novo motif discovery is
+              whether a newly discovered, putative motif resembles any
+              previously discovered motif in an existing database. To answer
+              this question, we define a statistical measure of motif-motif
+              similarity, and we describe an algorithm, called Tomtom, for
+              searching a database of motifs with a given query motif.
+              Experimental simulations demonstrate the accuracy of Tomtom's E
+              values and its effectiveness in finding similar motifs.",
+  year     =  2007,
+  language = "en"
+}
+,@ARTICLE{Wei2010-di,
+  title     = "Genome-wide analysis of {ETS}-family {DNA}-binding in vitro and
+               in vivo",
+  author    = "Wei, Gong-Hong and Badis, Gwenael and Berger, Michael F and
+               Kivioja, Teemu and Palin, Kimmo and Enge, Martin and Bonke,
+               Martin and Jolma, Arttu and Varjosalo, Markku and Gehrke, Andrew
+               R and Yan, Jian and Talukder, Shaheynoor and Turunen, Mikko and
+               Taipale, Mikko and Stunnenberg, Hendrik G and Ukkonen, Esko and
+               Hughes, Timothy R and Bulyk, Martha L and Taipale, Jussi",
+  journal   = "EMBO J.",
+  publisher = "Wiley",
+  volume    =  29,
+  number    =  13,
+  pages     = "2147--2160",
+  abstract  = "Members of the large ETS family of transcription factors (TFs)
+               have highly similar DNA-binding domains (DBDs)-yet they have
+               diverse functions and activities in physiology and oncogenesis.
+               Some differences in DNA-binding preferences within this family
+               have been described, but they have not been analysed
+               systematically, and their contributions to targeting remain
+               largely uncharacterized. We report here the DNA-binding profiles
+               for all human and mouse ETS factors, which we generated using two
+               different methods: a high-throughput microwell-based TF
+               DNA-binding specificity assay, and protein-binding microarrays
+               (PBMs). Both approaches reveal that the ETS-binding profiles
+               cluster into four distinct classes, and that all ETS factors
+               linked to cancer, ERG, ETV1, ETV4 and FLI1, fall into just one of
+               these classes. We identify amino-acid residues that are critical
+               for the differences in specificity between all the classes, and
+               confirm the specificities in vivo using chromatin
+               immunoprecipitation followed by sequencing (ChIP-seq) for a
+               member of each class. The results indicate that even relatively
+               small differences in in vitro binding specificity of a TF
+               contribute to site selectivity in vivo.",
+  month     =  jul,
+  year      =  2010,
+  language  = "en"
+}
+,@ARTICLE{Delsuc2006-nq,
+  title     = "Tunicates and not cephalochordates are the closest living
+               relatives of vertebrates",
+  author    = "Delsuc, Frédéric and Brinkmann, Henner and Chourrout, Daniel and
+               Philippe, Hervé",
+  journal   = "Nature",
+  publisher = "Springer Science and Business Media LLC",
+  volume    =  439,
+  number    =  7079,
+  pages     = "965--968",
+  abstract  = "Tunicates or urochordates (appendicularians, salps and sea
+               squirts), cephalochordates (lancelets) and vertebrates (including
+               lamprey and hagfish) constitute the three extant groups of
+               chordate animals. Traditionally, cephalochordates are considered
+               as the closest living relatives of vertebrates, with tunicates
+               representing the earliest chordate lineage. This view is mainly
+               justified by overall morphological similarities and an apparently
+               increased complexity in cephalochordates and vertebrates relative
+               to tunicates. Despite their critical importance for understanding
+               the origins of vertebrates, phylogenetic studies of chordate
+               relationships have provided equivocal results. Taking advantage
+               of the genome sequencing of the appendicularian Oikopleura
+               dioica, we assembled a phylogenomic data set of 146 nuclear genes
+               (33,800 unambiguously aligned amino acids) from 14 deuterostomes
+               and 24 other slowly evolving species as an outgroup. Here we show
+               that phylogenetic analyses of this data set provide compelling
+               evidence that tunicates, and not cephalochordates, represent the
+               closest living relatives of vertebrates. Chordate monophyly
+               remains uncertain because cephalochordates, albeit with a
+               non-significant statistical support, surprisingly grouped with
+               echinoderms, a hypothesis that needs to be tested with additional
+               data. This new phylogenetic scheme prompts a reappraisal of both
+               morphological and palaeontological data and has important
+               implications for the interpretation of developmental and genomic
+               studies in which tunicates and cephalochordates are used as model
+               animals.",
+  month     =  feb,
+  year      =  2006,
+  language  = "en"
+}
+,@ARTICLE{Friedman2023-yh,
+  title    = "Active learning of enhancer and silencer regulatory grammar in
+              photoreceptors",
+  author   = "Friedman, Ryan Z and Ramu, Avinash and Lichtarge, Sara and Myers,
+              Connie A and Granas, David M and Gause, Maria and Corbo, Joseph C
+              and Cohen, Barak A and White, Michael A",
+  journal  = "bioRxiv",
+  pages    = "2023.08.21.554146",
+  abstract = "Cis-regulatory elements (CREs) direct gene expression in health
+              and disease, and models that can accurately predict their
+              activities from DNA sequences are crucial for biomedicine. Deep
+              learning represents one emerging strategy to model the regulatory
+              grammar that relates CRE sequence to function. However, these
+              models require training data on a scale that exceeds the number of
+              CREs in the genome. We address this problem using active machine
+              learning to iteratively train models on multiple rounds of
+              synthetic DNA sequences assayed in live mammalian retinas. During
+              each round of training the model actively selects sequence
+              perturbations to assay, thereby efficiently generating informative
+              training data. We iteratively trained a model that predicts the
+              activities of sequences containing binding motifs for the
+              photoreceptor transcription factor Cone-rod homeobox (CRX) using
+              an order of magnitude less training data than current approaches.
+              The model's internal confidence estimates of its predictions are
+              reliable guides for designing sequences with high activity. The
+              model correctly identified critical sequence differences between
+              active and inactive sequences with nearly identical transcription
+              factor binding sites, and revealed order and spacing preferences
+              for combinations of motifs. Our results establish active learning
+              as an effective method to train accurate deep learning models of
+              cis-regulatory function after exhausting naturally occurring
+              training examples in the genome. \#\#\# Competing Interest
+              Statement B.A.C. is on the scientific advisory board of Patch
+              Biosciences. The remaining authors declare no competing interests.",
+  month    =  aug,
+  year     =  2023,
+  language = "en"
+}
+,@ARTICLE{Fromel2024-ux,
+  title    = "Synthetic enhancers reveal design principles of cell state
+              specific regulatory elements in hematopoiesis",
+  author   = "Frömel, Robert and Rühle, Julia and Bernal Martinez, Aina and
+              Szu-Tu, Chelsea and Pacheco Pastor, Felix and Martinez Corral,
+              Rosa and Velten, Lars",
+  journal  = "bioRxiv",
+  pages    = "2024.08.26.609645",
+  abstract = "AbstractDuring cellular differentiation, enhancers transform
+              overlapping gradients of transcription factors (TFs) to highly
+              specific gene expression patterns. However, the vast complexity of
+              regulatory DNA impedes the identification of the underlying
+              cis-regulatory rules. Here, we have characterized 62,126 fully
+              synthetic DNA sequences to bottom-up dissect design principles of
+              cell-state specific enhancers in the context of the
+              differentiation of blood stem cells to seven myeloid lineages.
+              Focusing on binding sites for 38 TFs and their pairwise
+              interactions, we found that identical sites displayed both
+              repressive and activating function, as a consequence of cellular
+              context, site combinatorics, or simply predicted occupancy of a TF
+              on an enhancer. Surprisingly, we found that combinations of
+              activating sites frequently neutralized each other or even gained
+              repressive function. These negative synergies convert quantitative
+              imbalances in transcription factor expression into binary
+              downstream activity patterns, a principle that can be exploited to
+              build differentiation-state specific enhancers from scratch.",
+  month    =  aug,
+  year     =  2024,
+  language = "en"
+}
+,@ARTICLE{King2020-hk,
+  title    = "Synthetic and genomic regulatory elements reveal aspects of
+              cis-regulatory grammar in mouse embryonic stem cells",
+  author   = "King, Dana M and Hong, Clarice Kit Yee and Shepherdson, James L
+              and Granas, David M and Maricque, Brett B and Cohen, Barak A",
+  journal  = "Elife",
+  volume   =  9,
+  abstract = "In embryonic stem cells (ESCs), a core transcription factor (TF)
+              network establishes the gene expression program necessary for
+              pluripotency. To address how interactions between four key TFs
+              contribute to cis-regulation in mouse ESCs, we assayed two
+              massively parallel reporter assay (MPRA) libraries composed of
+              binding sites for SOX2, POU5F1 (OCT4), KLF4, and ESRRB.
+              Comparisons between synthetic cis-regulatory elements and genomic
+              sequences with comparable binding site configurations revealed
+              some aspects of a regulatory grammar. The expression of synthetic
+              elements is influenced by both the number and arrangement of
+              binding sites. This grammar plays only a small role for genomic
+              sequences, as the relative activities of genomic sequences are
+              best explained by the predicted occupancy of binding sites,
+              regardless of binding site identity and positioning. Our results
+              suggest that the effects of transcription factor binding sites
+              (TFBS) are influenced by the order and orientation of sites, but
+              that in the genome the overall occupancy of TFs is the primary
+              determinant of activity.",
+  month    =  feb,
+  year     =  2020,
+  keywords = "computational biology; gene expression; mouse; pluripotency;
+              systems biology; transcription factors",
+  language = "en"
+}
+,@ARTICLE{Mann1947-dw,
+  title     = "On a Test of Whether one of Two Random Variables is
+               Stochastically Larger than the Other",
+  author    = "Mann, H B and Whitney, D R",
+  journal   = "aoms",
+  publisher = "Institute of Mathematical Statistics",
+  volume    =  18,
+  number    =  1,
+  pages     = "50--60",
+  abstract  = "Let $x$ and $y$ be two random variables with continuous
+               cumulative distribution functions $f$ and $g$. A statistic $U$
+               depending on the relative ranks of the $x$'s and $y$'s is
+               proposed for testing the hypothesis $f = g$. Wilcoxon proposed an
+               equivalent test in the Biometrics Bulletin, December, 1945, but
+               gave only a few points of the distribution of his statistic.
+               Under the hypothesis $f = g$ the probability of obtaining a given
+               $U$ in a sample of $n x's$ and $m y's$ is the solution of a
+               certain recurrence relation involving $n$ and $m$. Using this
+               recurrence relation tables have been computed giving the
+               probability of $U$ for samples up to $n = m = 8$. At this point
+               the distribution is almost normal. From the recurrence relation
+               explicit expressions for the mean, variance, and fourth moment
+               are obtained. The 2rth moment is shown to have a certain form
+               which enabled us to prove that the limit distribution is normal
+               if $m, n$ go to infinity in any arbitrary manner. The test is
+               shown to be consistent with respect to the class of alternatives
+               $f(x) > g(x)$ for every $x$.",
+  month     =  mar,
+  year      =  1947,
+  language  = "en"
+}
+,@ARTICLE{Stormo2010-xm,
+  title    = "Determining the specificity of protein-{DNA} interactions",
+  author   = "Stormo, Gary D and Zhao, Yue",
+  journal  = "Nat. Rev. Genet.",
+  volume   =  11,
+  number   =  11,
+  pages    = "751--760",
+  abstract = "Proteins, such as many transcription factors, that bind to
+              specific DNA sequences are essential for the proper regulation of
+              gene expression. Identifying the specific sequences that each
+              factor binds can help to elucidate regulatory networks within
+              cells and how genetic variation can cause disruption of normal
+              gene expression, which is often associated with disease.
+              Traditional methods for determining the specificity of DNA-binding
+              proteins are slow and laborious, but several new high-throughput
+              methods can provide comprehensive binding information much more
+              rapidly. Combined with in vivo determinations of transcription
+              factor binding locations, this information provides more detailed
+              views of the regulatory circuitry of cells and the effects of
+              variation on gene expression.",
+  month    =  nov,
+  year     =  2010,
+  language = "en"
+}
+,@ARTICLE{Ashuach2019-qp,
+  title    = "{MPRAnalyze}: statistical framework for massively parallel
+              reporter assays",
+  author   = "Ashuach, Tal and Fischer, David S and Kreimer, Anat and Ahituv,
+              Nadav and Theis, Fabian J and Yosef, Nir",
+  journal  = "Genome Biol.",
+  volume   =  20,
+  number   =  1,
+  pages    =  183,
+  abstract = "Massively parallel reporter assays (MPRAs) can measure the
+              regulatory function of thousands of DNA sequences in a single
+              experiment. Despite growing popularity, MPRA studies are limited
+              by a lack of a unified framework for analyzing the resulting data.
+              Here we present MPRAnalyze: a statistical framework for analyzing
+              MPRA count data. Our model leverages the unique structure of MPRA
+              data to quantify the function of regulatory sequences, compare
+              sequences' activity across different conditions, and provide
+              necessary flexibility in an evolving field. We demonstrate the
+              accuracy and applicability of MPRAnalyze on simulated and
+              published data and compare it with existing methods.",
+  month    =  sep,
+  year     =  2019,
+  language = "en"
+}
