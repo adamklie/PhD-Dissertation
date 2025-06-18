@@ -12,33 +12,33 @@ All Supplemental Tables can be found in the published version of this material a
     \centering
     \includegraphics[width=\textwidth]{1_figures-and-files/suppfigure1.png}
     \caption[STARR-seq supplementary results]{\textbf{STARR-seq plant promoter activity prediction}. \textbf{a}, Performance scatterplots colored by species of origin for the best leaf (left), protoplast (middle) and combined (right) models. \textbf{b}, Predictive performance of all trained combined models. The boxplots show distributions of R2 values on held-out test data for each architecture across n=5 independent experiments (random initializations). The boxes show medians along with low and high quartiles. Whiskers extend to the furthest datapoint within 1.5 times the interquartile range. More extreme points are marked as outliers. A two-sided Mann-Whitney U test was used to determine p-values which were adjusted by the Benjamini-Hochberg method (* = p < 0.05, ns = not significant). Test statistics and adjusted p-values were: CNN-Hybrid (u=4, adjusted p-value=0.11), CNN-DeepSTARR (u=0, adjusted p-value=0.01), CNN-Jores21CNN (u=0, adjusted p-value=0.01), Hybrid-DeepSTARR (u=0, adjusted p-value=0.01), Hybrid-Jores21CNN (u=0, adjusted p-value=0.01), DeepSTARR-Jores21CNN (u=16, adjusted p-value=0.55). \textbf{c}, PWMs for a hand-selected set of learned combined model filters (not initialized with known PWMs). \textbf{d}, Attribution scores calculated using the DeepLIFT method for the sequence with the highest predicted value in the best DeepSTARR combined model. \textbf{e}, Best Jores21CNN protoplast (top) and DeepSTARR combined (bottom) model scores for n=310 sequences with an implanted consensus TATA box motif, shuffled consensus TATA box motif, all zeros motif, and random motif at every possible position. Mean model scores with 95\% confidence intervals are shown. \textbf{f}, Model scores for the same set of n=310 promoters at different rounds of evolution compared against baseline (0) for the best protoplast (top) and combined (bottom) model.}
-    \label{fig:supplementary_1}
+    \label{fig:1 supplementary_1}
 \end{figure}
 
 \begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{1_figures-and-files/suppfigure2.png}
     \caption[RBP specificity prediction]{\textbf{RNA binding protein (RBP) specificity prediction}. \textbf{a}, Spearman correlations across four different metrics with each metric calculated from comparisons between observed (Set B) and predicted binding intensities (see Methods for more details on how each metric is calculated). Each boxplot indicates a distribution of Pearson correlations across all n=244 RBPs, except for Kipoi which includes n=89 RBPs. Ray et al, MatrixREDUCE, DeepBind and Observed intensities refer to correlations calculated from predicted intensities reported in Alipanahi et al. Observed intensities and SetA refer to correlations calculated using the intensities from Set A probes as the predicted intensities (see Methods). The boxes show medians along with low and high quartiles. Whiskers extend to the furthest datapoint within 1.5 times the interquartile range. \textbf{b}, Performance comparison scatterplots for the indicated models and metrics. Each dot indicates a comparison of the Pearson correlation between two models on a single RBP. \textbf{c}, Multitask and single task filters with TomTom significant annotations for Pcbp2 (top) and NCU02404 (bottom). \textbf{d}, The feature attributions calculated using the InputXGradient method for single task and multitask models using the sequence with the highest observed intensity in the test set for Pcbp2 (top) and NCU02404 (bottom). \textbf{e}, Two more examples of InputXGradient attribution scores for random (top row) and evolved (bottom row) sequences after evolution with the Pcbp2 (left) and NCU02404 (right) single task models. Red dashed lines indicate mutations made during evolution annotated with the round the mutation occurred in.}
-    \label{fig:supplementary_2}
+    \label{fig:1 supplementary_2}
 \end{figure}
 
 \begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{1_figures-and-files/suppfigure3.png}
     \caption[JunD classifier interpretation]{\textbf{JunD binding classifier interpretation}. \textbf{a}, Attribution scores calculated using GradientSHAP for the forward and reverse complement of the sequence with the highest predictions in each of the dsCNN and Kopp21CNN models. \textbf{b}, PWM visualizations of the 10 filters for the three convolutional architectures trained for JunD binding classification.}
-    \label{fig:supplementary_3}
+    \label{fig:1 supplementary_3}
 \end{figure}
 
 \begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{1_figures-and-files/suppfigure4.png}
     \caption[Memory and batch time benchmarks]{\textbf{Peak memory usage and batch processing time benchmarks}. Peak memory usage and batch processing time for datasets with increasing numbers of 10,000bp sequences. \textbf{a}, Peak memory usage against number of sequences for datasets loaded into memory versus datasets loaded out-of-core. \textbf{b}, Median time in seconds taken for processing a batch of 100 sequences using the same datasets as in \textbf{a}. Error bars indicate interquartile ranges across up to 100 random batches. Both axes in \textbf{a} and \textbf{b} are on the log10 scale. All analyses were performed using a chunk size of 4096 along the sequence dimension on a machine with 2 CPU cores and 64GB of RAM.}
-    \label{fig:supplementary_4}
+    \label{fig:1 supplementary_4}
 \end{figure}
 
 \begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{1_figures-and-files/suppfigure5.png}
     \caption[Custom model development in EUGENe]{\textbf{Implementing custom architectures and training tasks in EUGENe}. \textbf{a}, Creating custom architectures that are compatible with EUGENe’s training protocol involves first inheriting from the \texttt{torch.nn.Module} class, then defining the model’s layer composition (\texttt{init}) and the forward propagation (\texttt{forward}) method. \textbf{b}, Architectures can also be wrapped in \texttt{LightningModules} to allow for training protocols other than EUGENe’s current built-ins. For instance, a variational autoencoder, or VAE, requires creating two functions for calculating different parts of the loss and implementing how the functions are integrated into the training function (in its most basic form). We have omitted the changes needed to define an encoder and decoder structure and how that is handled in \texttt{forward}. A generative adversarial network (GAN), as another example, requires implementing a multipart loss function and configuring multiple optimizers to handle the training of the generator and discriminator. \textbf{c}, Transfer learning from pretrained models is also possible in EUGENe, and can be accomplished with simple changes to an architecture’s initialization and \texttt{forward} functions. Namely, a pretrained PyTorch model needs to be loaded in the (\texttt{forward}) method and then utilized in the \texttt{forward} method.}
-    \label{fig:supplementary_5}
+    \label{fig:1 supplementary_5}
 \end{figure}
