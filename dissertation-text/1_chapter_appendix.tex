@@ -2,7 +2,65 @@
 
 \chapter{Supplemental Material for Chapter \ref{chap:chapter 1}}
 
-All Supplemental Tables can be found in the published version of this material at the following location: \url{https://www.nature.com/articles/s43588-023-00544-w}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Supplementary Tables}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent
+\textbf{Supplementary Table 1}. Common deep learning for regulatory genomics tasks can be run end-to-end with EUGENe.
+
+\begin{landscape}
+\begin{table}[ht]
+\centering
+\caption[Summary of supported tasks in EUGENe]{Summary of supported tasks in EUGENe, including representative models, biological insights, and implementation details. Tasks marked with preprocessing requirements rely on external tools (e.g., \texttt{pycisTopic}, \texttt{ScanPy}) for ETL.}
+\label{tab:1 supplementary_1}
+
+\renewcommand{\arraystretch}{0.2} % Increase row height
+\begin{tabularx}{\linewidth}{|l|l|X|c|c|c|X|l|}
+\hline
+\textbf{Task} & \textbf{Examples} & \textbf{Potential Insights Gained} & \textbf{ETL} & \textbf{Training \& Eval} & \textbf{End-to-End} & \textbf{Interpretation Analyses} & \textbf{EUGENe Example} \\
+\hline
+Single task regression from a tabular file & DeepBind\textsuperscript{10}, ResidualBind\textsuperscript{14} & Motif importance on continuous or binary events (e.g., RBP binding) & Yes & Yes & Yes & Filter interpretation, attribution analysis, evolution, GIA & DeepBind \\
+\hline
+Single track classification of peak regions from a single BED file & DeepBind\textsuperscript{10} & Motif importance on binary events (e.g., TF binding) & Yes & Yes & Yes & Filter interpretation, attribution analysis, evolution, GIA & DeepBind \\
+\hline
+Multitask track classification (ChIP, ATAC, DNase) from multiple BED files & DeepSEA\textsuperscript{15}, DanQ\textsuperscript{16}, Basset\textsuperscript{17}, Sei\textsuperscript{23}, Satori\textsuperscript{26} & Biochemical activity (e.g., TF binding, transcription); Variant effects on biochemical activity & Yes & Yes & Yes & Filter interpretation, attribution analysis, evolution, GIA & Basset \\
+\hline
+Multitask track regression (ChIP, ATAC, DNase) at binned or base-pair resolution & Basenji\textsuperscript{18}, Enformer\textsuperscript{29}, BPNet\textsuperscript{38} & Biochemical activity (e.g., transcription, DNA accessibility); Variant effects; CRE syntax rules & Yes & Yes & Yes & Filter interpretation, GIA & BPNet \\
+\hline
+Single/multitask CRE activity prediction (regression or classification) & DeepSTARR\textsuperscript{35}, MPRA-DragoNN\textsuperscript{36} & Motif importance on CRE activity; Variant effects; CRE syntax rules & Yes & Yes & Yes & Filter interpretation, attribution analysis, evolution, GIA & DeepSTARR \\
+\hline
+Single cell ATAC-seq topic classification (multiclass) & DeepMEL\textsuperscript{19,20}, DeepFlyBrain\textsuperscript{24} & Cell type–specific motif importance; Cell type–specific variant effect prediction; CRE syntax & Requires \texttt{pycisTopic} & Yes & Yes (with preprocessing) & Filter interpretation, attribution analysis, evolution, GIA & DeepMEL \\
+\hline
+Single cell ATAC-seq cell accessibility prediction* & scBasset\textsuperscript{22} & Single cell denoising; Cell type–specific motif importance & Requires \texttt{ScanPy} & Yes & Yes (with preprocessing) & Filter interpretation, attribution analysis, evolution, GIA & scBasset \\
+\hline
+\end{tabularx}
+\end{table}
+\end{landscape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Supplementary Data}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+All Supplemental Data can be found in the published version of this material at the following location: \url{https://www.nature.com/articles/s43588-023-00544-w#Sec24}.
+
+\noindent
+\textbf{Supplementary Data 1}. Model architectures and training parameters used for analysis of plant promoters from Jores et al. (2021).
+
+\noindent
+\textbf{Supplementary Data 2}. Model architectures and training parameters used for analysis of RBP specificity from Alipanahi et al. (2015).
+
+\noindent
+\textbf{Supplementary Data 3}. Model architectures and training parameters used for for classification of JunD binding from Kopp et al. (2020).
+
+\noindent
+\textbf{Supplementary Data 4}. Available datasets in SeqDatasets.
+
+\noindent
+\textbf{Supplementary Data 5}. Published dataset CPU RAM requirements if loading dataset into memory.
+
+\noindent
+\textbf{Supplementary Data 6}. Built-in architectures in EUGENe’s models module.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Supplementary Figures}
@@ -10,7 +68,7 @@ All Supplemental Tables can be found in the published version of this material a
 
 \begin{figure}[p]
     \centering
-    \includegraphics[width=\textwidth]{1_figures-and-files/suppfigure1.png}
+    \includegraphics[height=0.5\textheight, keepaspectratio]{1_figures-and-files/suppfigure1.png}
     \caption[STARR-seq supplementary results]{\textbf{STARR-seq plant promoter activity prediction}. \textbf{a}, Performance scatterplots colored by species of origin for the best leaf (left), protoplast (middle) and combined (right) models. \textbf{b}, Predictive performance of all trained combined models. The boxplots show distributions of R2 values on held-out test data for each architecture across n=5 independent experiments (random initializations). The boxes show medians along with low and high quartiles. Whiskers extend to the furthest datapoint within 1.5 times the interquartile range. More extreme points are marked as outliers. A two-sided Mann-Whitney U test was used to determine p-values which were adjusted by the Benjamini-Hochberg method (* = p < 0.05, ns = not significant). Test statistics and adjusted p-values were: CNN-Hybrid (u=4, adjusted p-value=0.11), CNN-DeepSTARR (u=0, adjusted p-value=0.01), CNN-Jores21CNN (u=0, adjusted p-value=0.01), Hybrid-DeepSTARR (u=0, adjusted p-value=0.01), Hybrid-Jores21CNN (u=0, adjusted p-value=0.01), DeepSTARR-Jores21CNN (u=16, adjusted p-value=0.55). \textbf{c}, PWMs for a hand-selected set of learned combined model filters (not initialized with known PWMs). \textbf{d}, Attribution scores calculated using the DeepLIFT method for the sequence with the highest predicted value in the best DeepSTARR combined model. \textbf{e}, Best Jores21CNN protoplast (top) and DeepSTARR combined (bottom) model scores for n=310 sequences with an implanted consensus TATA box motif, shuffled consensus TATA box motif, all zeros motif, and random motif at every possible position. Mean model scores with 95\% confidence intervals are shown. \textbf{f}, Model scores for the same set of n=310 promoters at different rounds of evolution compared against baseline (0) for the best protoplast (top) and combined (bottom) model.}
     \label{fig:1 supplementary_1}
 \end{figure}
@@ -24,14 +82,14 @@ All Supplemental Tables can be found in the published version of this material a
 
 \begin{figure}[p]
     \centering
-    \includegraphics[width=\textwidth]{1_figures-and-files/suppfigure3.png}
+    \includegraphics[height=0.65\textheight, keepaspectratio]{1_figures-and-files/suppfigure3.png}
     \caption[JunD classifier interpretation]{\textbf{JunD binding classifier interpretation}. \textbf{a}, Attribution scores calculated using GradientSHAP for the forward and reverse complement of the sequence with the highest predictions in each of the dsCNN and Kopp21CNN models. \textbf{b}, PWM visualizations of the 10 filters for the three convolutional architectures trained for JunD binding classification.}
     \label{fig:1 supplementary_3}
 \end{figure}
 
 \begin{figure}[p]
     \centering
-    \includegraphics[width=\textwidth]{1_figures-and-files/suppfigure4.png}
+    \includegraphics[height=0.65\textheight, keepaspectratio]{1_figures-and-files/suppfigure4.png}
     \caption[Memory and batch time benchmarks]{\textbf{Peak memory usage and batch processing time benchmarks}. Peak memory usage and batch processing time for datasets with increasing numbers of 10,000bp sequences. \textbf{a}, Peak memory usage against number of sequences for datasets loaded into memory versus datasets loaded out-of-core. \textbf{b}, Median time in seconds taken for processing a batch of 100 sequences using the same datasets as in \textbf{a}. Error bars indicate interquartile ranges across up to 100 random batches. Both axes in \textbf{a} and \textbf{b} are on the log10 scale. All analyses were performed using a chunk size of 4096 along the sequence dimension on a machine with 2 CPU cores and 64GB of RAM.}
     \label{fig:1 supplementary_4}
 \end{figure}
